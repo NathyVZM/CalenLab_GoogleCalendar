@@ -15,13 +15,13 @@ const enviarRegistro = () => {
     }).then(response => {
         return response.json();
     }).then(datos => {
-        console.table(datos.status);
-        //redireccionar(datos.status);
+        console.table(datos);
+        redireccionar(datos.status);
     })
 }
 
 const redireccionar = (status) => {
-    if(status = 200) {
+    if(status == 200) {
         window.location.href = "http://localhost:8080";
     }
 }

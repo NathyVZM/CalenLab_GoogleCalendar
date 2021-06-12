@@ -145,6 +145,7 @@ main div {
     font-size: 1.1em;
     font-weight: bold;
     transition: transform 0.2s ease-in-out 0s, box-shadow 0.2s ease-in-out 0s;
+    outline: none;
 }
 
 #derecha form button:hover {
