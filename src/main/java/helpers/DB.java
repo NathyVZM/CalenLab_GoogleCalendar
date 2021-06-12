@@ -61,6 +61,8 @@ public class DB {
 			pstmt.setObject(1, usuario[0]);
 			pstmt.setObject(2, usuario[1]);
 			pstmt.setObject(3, usuario[2]);
+			pstmt.setObject(4, usuario[3]);
+			pstmt.setObject(5, null);
 
 			return pstmt.executeUpdate();
 			

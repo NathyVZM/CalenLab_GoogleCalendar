@@ -9,8 +9,10 @@ public class RegisterController {
 	
 	static public String register(String name, String lastName, String userName, String password) {
 		System.out.println(name + "\t" + lastName + "\t" + userName + "\t" + password);
+
+		String hashPassword = Hashing.getHash(password);
 		
-		Object[] user = {name, lastName, userName, password};
+		Object[] user = {name, lastName, userName, hashPassword};
 		try {
 			if (db.dbInsertQuery(propsR.getValue("insertUsers"), user) == 0){
 				return "{\"message\": \"Usuario Existente\", \"status\": " + 503 + "}";

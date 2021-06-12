@@ -12,7 +12,8 @@ public class Prueba_Main {
 
         System.out.println(Hashing.getHash("NathyVZM15&"));
 
-        DB.getInstances();
+        DB db = DB.getInstances();
+
     }
     
 }
