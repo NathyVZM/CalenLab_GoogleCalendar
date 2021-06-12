@@ -1,0 +1,5 @@
+controllers\RegisterController.class
+helpers\PropertiesReader.class
+helpers\Hashing.class
+helpers\DB.class
+servlets\RegistroUsuario.class
