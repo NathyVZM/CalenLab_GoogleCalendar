@@ -1,6 +1,9 @@
 controllers\RegisterController.class
-helpers\PropertiesReader.class
+helpers\Auth.class
 helpers\Hashing.class
+controllers\LoginController.class
 helpers\DB.class
+helpers\PropertiesReader.class
+servlets\LoginUsuario.class
 helpers\Prueba_Main.class
 servlets\RegistroUsuario.class

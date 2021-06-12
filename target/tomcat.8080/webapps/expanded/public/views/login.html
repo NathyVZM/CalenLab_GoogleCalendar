@@ -30,17 +30,19 @@
                 <h2>Iniciar Sesion</h2>
                 <p>No tiene una Cuenta? <a href="registro.html">Registrese</a></p>
             </header>
-            <form action="">
-                <input type="text" placeholder="Nombre de Usuario">
-                <input type="password" placeholder="Contrasenia">
+            <form action="" id="formulario-login">
+                <input type="text" placeholder="Nombre de Usuario" name="userName">
+                <input type="password" placeholder="Contrasenia" name="password">
 
-                <button type="button">Iniciar Sesion</button>
+                <button type="button" id="boton-login">Iniciar Sesion</button>
             </form>
         </div>
         <div id="cerrar">
             <a href="../../index.html"><img src="../assets/icons/close2.svg" alt="Close Icon"></a>
         </div>
     </main>
+
+    <script src="../scripts/login.js"></script>
 </body>
 
 </html>

@@ -13,7 +13,7 @@ public class LoginController {
                 HttpSession session = request.getSession();
                 session.setAttribute("usuario", request.getParameter("userName"));
 
-                return "{\"message\": \"Login Exitoso\", \"user\": " + request.getParameter("userName") + ", \"status\": " + 200 + "}";
+                return "{\"message\": \"Login Exitoso\", \"user\": \"" + request.getParameter("userName") + "\", \"status\": " + 200 + "}";
             } 
             else {
                 return "{\"message\": \"Error de Credenciales\", \"status\": " + 500 + "}";
