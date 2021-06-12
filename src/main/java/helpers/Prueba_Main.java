@@ -9,6 +9,10 @@ public class Prueba_Main {
         System.out.println(propsR.getValue("myUrlDB"));
         System.out.println(propsR.getValue("myUserDB"));
         System.out.println(propsR.getValue("myPassDB"));
+
+        System.out.println(Hashing.getHash("NathyVZM15&"));
+
+        DB.getInstances();
     }
     
 }

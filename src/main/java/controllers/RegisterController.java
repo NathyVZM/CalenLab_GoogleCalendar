@@ -1,21 +1,23 @@
 package controllers;
 
-import helpers.DB;
-import helpers.PropertiesReader;
+import helpers.*;
 
 public class RegisterController {
 	
-	//private static DB db = DB.getInstances();
-	//private static PropertiesReader propsR = PropertiesReader.getInstances();
+	private static DB db = DB.getInstances();
+	private static PropertiesReader propsR = PropertiesReader.getInstances();
 	
-	static public String register(String name, String email, String password) {
-		System.out.println(name + "\t" + email + "\t" + password);
+	static public String register(String name, String lastName, String userName, String password) {
+		System.out.println(name + "\t" + lastName + "\t" + userName + "\t" + password);
 		
-		//Object[] user = {name, email, password};
+		Object[] user = {name, lastName, userName, password};
 		try {
-			//db.dbInsertQuery(propsR.getValue("insertUsers"), user);
-			//db.dbClose();
-			return "{\"name\": \"" + name + "\", \"email\": \"" + email + "\", \"password\": \"" + password + "\"}";
+			if (db.dbInsertQuery(propsR.getValue("insertUsers"), user) == 0){
+				return "{\"message\": \"Usuario Existente\", \"status\": " + 503 + "}";
+			}
+			else{
+				return "{\"message\": \"Registro Exitoso\", \"status\": " + 200 + "}";
+			}
 		} catch (Exception e) {
 			// TODO: handle exception
 			return "{\"message\": \"user already exist\", \"status\": " + 503 + "}";

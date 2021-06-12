@@ -55,19 +55,21 @@ public class DB {
 	}
 	
 	//METHOD - dbPreparedStatement()
-	public void dbInsertQuery(String query, Object[] usuario) {
+	public int dbInsertQuery(String query, Object[] usuario) {
 		try {
 			pstmt = conn.prepareStatement(query);
 			pstmt.setObject(1, usuario[0]);
 			pstmt.setObject(2, usuario[1]);
 			pstmt.setObject(3, usuario[2]);
+
+			return pstmt.executeUpdate();
 			
-			if(pstmt.executeUpdate() == 0) {
+			/*if(pstmt.executeUpdate() == 0) {
 				System.out.println("Usuario No Ingresado\n");
 			}
 			else {
 				System.out.println("Usuario Ingresado Correctamente\n");
-			}
+			}*/
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -80,6 +82,7 @@ public class DB {
 				e.printStackTrace();
 			}
 		}
+		return 0;
 	}
 	
 	//METHOD - dbUpdateQuery()

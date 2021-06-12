@@ -27,6 +27,6 @@ public class RegistroUsuario extends HttpServlet {
         resp.setContentType("application/json");
 		PrintWriter out = resp.getWriter();
 		out.println(RegisterController.register(req.getParameter("name"),
-				req.getParameter("email"), req.getParameter("password")));
+				req.getParameter("lastName"), req.getParameter("userName"), req.getParameter("password")));
     }
 }
