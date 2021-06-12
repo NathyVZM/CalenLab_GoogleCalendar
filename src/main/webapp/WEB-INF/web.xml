@@ -11,4 +11,12 @@
     <description></description>
     <servlet-class>servlets.RegistroUsuario</servlet-class>
   </servlet>
+
+  <servlet>
+    <servlet-name>LoginUsuario</servlet-name>
+    <display-name>LoginUsuario</display-name>
+    <description></description>
+    <servlet-class>servlets.LoginUsuario</servlet-class>
+  </servlet>
+
 </web-app>
