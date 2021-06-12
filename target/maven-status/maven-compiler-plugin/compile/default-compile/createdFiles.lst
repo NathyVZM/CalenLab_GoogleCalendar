@@ -2,4 +2,5 @@ controllers\RegisterController.class
 helpers\PropertiesReader.class
 helpers\Hashing.class
 helpers\DB.class
+helpers\Prueba_Main.class
 servlets\RegistroUsuario.class

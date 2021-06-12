@@ -30,21 +30,23 @@
                 <h2>Registrarse</h2>
                 <p>Ya tiene una Cuenta? <a href="login.html">Inicie Sesion</a></p>
             </header>
-            <form action="">
-                <input type="text" placeholder="Ingrese su Nombre">
-                <input type="text" placeholder="Ingrese su Apellido">
+            <form action="" id="formulario-registro">
+                <input type="text" placeholder="Ingrese su Nombre" name="name">
+                <input type="text" placeholder="Ingrese su Apellido" name="lastName">
                 <input type="text" placeholder="Escriba un Nombre de Usuario">
-                <input type="text" placeholder="Confirma su Nombre de Usuario">
+                <input type="text" placeholder="Confirma su Nombre de Usuario" name="userName">
                 <input type="password" placeholder="Escriba una Contrasenia">
-                <input type="password" placeholder="Confirma su Contrasenia">
+                <input type="password" placeholder="Confirma su Contrasenia" name="password">
 
-                <button type="button">Registrarse</button>
+                <button type="button" id="boton-registro">Registrarse</button>
             </form>
         </div>
         <div id="cerrar">
             <a href="../../index.html"><img src="../assets/icons/close2.svg" alt="Close Icon"></a>
         </div>
     </main>
+
+    <script src="../scripts/register.js"></script>
 </body>
 
 </html>
