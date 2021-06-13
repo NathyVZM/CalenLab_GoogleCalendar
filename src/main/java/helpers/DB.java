@@ -2,8 +2,6 @@ package helpers;
 
 import java.sql.*;
 
-import javax.swing.text.html.HTMLDocument.RunElement;
-
 public class DB {
 
 	// ATTRIBUTES
@@ -69,7 +67,7 @@ public class DB {
 		return user;
 	}
 
-	// METHOD - dbStatement
+	// METHOD - dbSelectQuery
 	public void dbSelectQuery(String query) {
 		try {
 			stmt = conn.createStatement();
@@ -96,11 +94,15 @@ public class DB {
 	public int dbInsertQuery(String query, Object[] usuario) {
 		try {
 			pstmt = conn.prepareStatement(query);
-			pstmt.setObject(1, usuario[0]);
+			/*pstmt.setObject(1, usuario[0]);
 			pstmt.setObject(2, usuario[1]);
 			pstmt.setObject(3, usuario[2]);
 			pstmt.setObject(4, usuario[3]);
-			pstmt.setObject(5, null);
+			pstmt.setObject(5, null);*/
+
+			for(int i = 0; i < usuario.length; i++) {
+				pstmt.setObject(i + 1, usuario[i]);
+			}
 
 			return pstmt.executeUpdate();
 

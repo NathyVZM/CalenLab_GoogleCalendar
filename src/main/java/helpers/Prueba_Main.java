@@ -12,8 +12,11 @@ public class Prueba_Main {
 
         System.out.println(Hashing.getHash("NathyVZM15&"));*/
 
+        Object[] usuario = {"Nathalie", "Zambrano", "nathalievzm@hotmail.com", "nathyvzm", null};
+        Object[] calendario = {1234, "URU", "Calendario de Tareas", "#00000"};
+
         DB db = DB.getInstances();
-        db.dbAuthCheck("nathy");
+        db.dbInsertQuery(propsR.getValue("insertCalendars"), calendario);
 
     }
     

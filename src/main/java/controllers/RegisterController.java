@@ -12,7 +12,7 @@ public class RegisterController {
 
 		String hashPassword = Hashing.getHash(password);
 		
-		Object[] user = {name, lastName, userName, hashPassword};
+		Object[] user = {name, lastName, userName, hashPassword, null};
 		try {
 			if (db.dbInsertQuery(propsR.getValue("insertUsers"), user) == 0){
 				return "{\"message\": \"Usuario Existente\", \"status\": " + 503 + "}";
