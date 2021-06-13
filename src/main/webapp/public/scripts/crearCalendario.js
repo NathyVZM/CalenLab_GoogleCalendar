@@ -21,7 +21,7 @@ const crearCalendario = () => {
         let div = document.getElementById("contenedor-calendarios");
         let calendario = document.createElement("input");
         let label = document.createElement("label");
-        let boton = document.createElement(`eliminar-${datos.idCalendario}`);
+        let boton = document.createElement("button");
 
         calendario.type = "radio";
         calendario.name = "calendario";
@@ -30,6 +30,10 @@ const crearCalendario = () => {
 
         label.innerText = datos.titulo;
         label.htmlFor = datos.titulo;
+
+        boton.type = "button";
+        boton.innerText = "Eliminar"
+        boton.id = `eliminar-${datos.idCalendario}`;
 
         div.appendChild(calendario);
         div.appendChild(label);

@@ -17,13 +17,12 @@ const crearCalendario = () => {
         return response.json();
     }).then(datos => {
         console.table(datos);
-        /*let calendario = document.createElement("div");
-        calendario.setAttribute("id", datos.idCalendario);
-        document.body.appendChild(calendario);*/
 
-        let div = document.createElement("div");
+        let div = document.getElementById("contenedor-calendarios");
         let calendario = document.createElement("input");
         let label = document.createElement("label");
+        let boton = document.createElement("button");
+
         calendario.type = "radio";
         calendario.name = "calendario";
         calendario.id = datos.titulo;
@@ -32,10 +31,14 @@ const crearCalendario = () => {
         label.innerText = datos.titulo;
         label.htmlFor = datos.titulo;
 
+        boton.type = "button";
+        boton.innerText = "Eliminar"
+        boton.id = `eliminar-${datos.idCalendario}`;
+
         div.appendChild(calendario);
         div.appendChild(label);
+        div.appendChild(boton);
         document.body.appendChild(div);
-
     })
 }
 
