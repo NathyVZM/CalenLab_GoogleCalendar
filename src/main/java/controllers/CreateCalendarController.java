@@ -33,7 +33,7 @@ public class CreateCalendarController {
             } else {
                 db.dbInsertQuery(propsR.getValue("insertPermisos"), permisos);
                 return "{\"message\": \"Calendario Creado\", \"status\": " + 200 + ", \"idCalendario\": " + idCalendario
-                        + ", \"nomUsuario\": \"" + nomUsuario + "\"}";
+                        + ", \"titulo\": \"" + request.getParameter("titulo") + "\", \"nomUsuario\": \"" + nomUsuario + "\"}";
             }
         } catch (Exception e) {
             // TODO: handle exception

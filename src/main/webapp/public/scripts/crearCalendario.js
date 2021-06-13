@@ -17,10 +17,24 @@ const crearCalendario = () => {
         return response.json();
     }).then(datos => {
         console.table(datos);
-        let calendario = document.createElement("div");
-        calendario.setAttribute("id", datos.idCalendario);
-        document.body.appendChild(calendario);
 
+        let div = document.getElementById("contenedor-calendarios");
+        let calendario = document.createElement("input");
+        let label = document.createElement("label");
+        let boton = document.createElement(`eliminar-${datos.idCalendario}`);
+
+        calendario.type = "radio";
+        calendario.name = "calendario";
+        calendario.id = datos.titulo;
+        calendario.value = datos.idCalendario;
+
+        label.innerText = datos.titulo;
+        label.htmlFor = datos.titulo;
+
+        div.appendChild(calendario);
+        div.appendChild(label);
+        div.appendChild(boton);
+        document.body.appendChild(div);
     })
 }
 
