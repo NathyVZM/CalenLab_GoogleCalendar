@@ -25,7 +25,7 @@ const crearCalendario = () => {
 
         calendario.type = "radio";
         calendario.name = "calendario";
-        calendario.id = datos.titulo;
+        calendario.id = datos.idCalendario;
         calendario.value = datos.idCalendario;
 
         label.innerText = datos.titulo;
@@ -34,7 +34,6 @@ const crearCalendario = () => {
         boton.type = "button";
         boton.innerText = "Eliminar"
         boton.id = `eliminar-${datos.idCalendario}`;
-        boton.name = "eliminar";
         boton.addEventListener("click", (e) => {
             console.log(e.target.id)
             console.log(datos.titulo);
@@ -64,21 +63,6 @@ const crearCalendario = () => {
         div.appendChild(boton);
         document.body.appendChild(div);
     })
-}
-
-const eliminarCalendario = (e, titulo) => {
-    console.log(e.target.id);
-    let idCalendario = e.target.id;
-    console.log(titulo);
-
-    /*fetch("http://localhost:8080/EliminarCalendario", {
-        method: "DELETE",
-        body: idCalendario
-    }).then(response => {
-        return response.json();
-    }).then(datos => {
-        console.log(datos);
-    })*/
 }
 
 boton_calendario.onclick = crearCalendario;
