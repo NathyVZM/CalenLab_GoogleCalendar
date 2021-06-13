@@ -3,7 +3,6 @@ package servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -28,7 +27,6 @@ public class EliminarCalendario extends HttpServlet {
         // TODO Auto-generated method stub
         resp.setContentType("application/json");
         PrintWriter out = resp.getWriter();
-        //out.println("{\"message\": \"idCalendario Recibido\", \"idCalendario\": " + req.getParameter("idCalendario") + "}");
         out.println(DeleteCalendarController.eliminarCalendario(req));
     }
     

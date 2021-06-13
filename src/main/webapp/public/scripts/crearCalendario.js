@@ -53,6 +53,8 @@ const crearCalendario = () => {
             }).then(data => {
                 console.table(data);
                 boton.remove();
+                label.remove();
+                calendario.remove();
             })
 
         })
@@ -62,21 +64,6 @@ const crearCalendario = () => {
         div.appendChild(boton);
         document.body.appendChild(div);
     })
-}
-
-const eliminarCalendario = (e, titulo) => {
-    console.log(e.target.id);
-    let idCalendario = e.target.id;
-    console.log(titulo);
-
-    /*fetch("http://localhost:8080/EliminarCalendario", {
-        method: "DELETE",
-        body: idCalendario
-    }).then(response => {
-        return response.json();
-    }).then(datos => {
-        console.log(datos);
-    })*/
 }
 
 boton_calendario.onclick = crearCalendario;

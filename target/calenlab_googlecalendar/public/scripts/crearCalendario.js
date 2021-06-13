@@ -52,6 +52,9 @@ const crearCalendario = () => {
                 return response.json();
             }).then(data => {
                 console.table(data);
+                boton.remove();
+                label.remove();
+                calendario.remove();
             })
 
         })
