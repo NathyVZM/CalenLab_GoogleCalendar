@@ -19,4 +19,11 @@
     <servlet-class>servlets.LoginUsuario</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>CrearCalendario</servlet-name>
+    <display-name>CrearCalendario</display-name>
+    <description></description>
+    <servlet-class>servlets.CrearCalendario</servlet-class>
+  </servlet>
+
 </web-app>

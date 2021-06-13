@@ -17,5 +17,11 @@ const crearCalendario = () => {
         return response.json();
     }).then(datos => {
         console.table(datos);
+        let calendario = document.createElement("div");
+        calendario.setAttribute("id", datos.idCalendario);
+        document.body.appendChild(calendario);
+
     })
 }
+
+boton_calendario.onclick = crearCalendario;

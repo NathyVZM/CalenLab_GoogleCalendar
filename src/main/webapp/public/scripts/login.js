@@ -23,7 +23,7 @@ const enviarLogin = () => {
 
 const redireccionar = (status) => {
     if(status == 200) {
-        window.location.href = "http://localhost:8080";
+        window.location.href = "http://localhost:8080/public/views/principal.html";
     }
 }
 

@@ -16,8 +16,11 @@ import controllers.CreateCalendarController;
 @WebServlet("/CrearCalendario")
 
 public class CrearCalendario extends HttpServlet{
+    private static final long serialVersionUID = 1L;
 
-    private CrearCalendario() {}
+    public CrearCalendario() {
+        super();
+    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
