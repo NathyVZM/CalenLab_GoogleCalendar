@@ -5,9 +5,11 @@ controllers\EditUserController.class
 servlets\EditarUsuario.class
 servlets\CrearCalendario.class
 servlets\LoginUsuario.class
+servlets\EliminarUsuario.class
 controllers\CreateCalendarController.class
 controllers\LoginController.class
 helpers\DB.class
 helpers\PropertiesReader.class
+controllers\DeleteUserController.class
 helpers\Prueba_Main.class
 servlets\RegistroUsuario.class

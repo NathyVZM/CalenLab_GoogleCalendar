@@ -33,4 +33,11 @@
     <servlet-class>servlets.EditarUsuario</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>EliminarUsuario</servlet-name>
+    <display-name>EliminarUsuario</display-name>
+    <description></description>
+    <servlet-class>servlets.EliminarUsuario</servlet-class>
+  </servlet>
+
 </web-app>

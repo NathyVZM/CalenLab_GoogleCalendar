@@ -20,7 +20,7 @@ public class DeleteUserController {
             String nomUsuario = (String) session.getAttribute("usuario");
 
             db.dbDeleteQuery(propsR.getValue("deleteUsers"), nomUsuario);
-            return "{\"message\": \"Usuario Eliminado\", \"status\": " + 200 + ", \"nomUsuario\": " + nomUsuario + "}";
+            return "{\"message\": \"Usuario Eliminado\", \"status\": " + 200 + ", \"nomUsuario\": \"" + nomUsuario + "\"}";
 
         } catch (Exception e) {
             // TODO: handle exception
