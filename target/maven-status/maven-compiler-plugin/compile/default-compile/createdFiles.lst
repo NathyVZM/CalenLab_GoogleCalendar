@@ -1,12 +1,13 @@
 controllers\RegisterController.class
 helpers\Auth.class
 helpers\Hashing.class
+controllers\EditUserController.class
+servlets\EditarUsuario.class
+servlets\CrearCalendario.class
+servlets\LoginUsuario.class
 controllers\CreateCalendarController.class
 controllers\LoginController.class
 helpers\DB.class
-helpers\dbProperties.properties
 helpers\PropertiesReader.class
-servlets\CrearCalendario.class
-servlets\LoginUsuario.class
 helpers\Prueba_Main.class
 servlets\RegistroUsuario.class

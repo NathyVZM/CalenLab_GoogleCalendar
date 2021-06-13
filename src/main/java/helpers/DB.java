@@ -126,11 +126,15 @@ public class DB {
 	}
 
 	// METHOD - dbUpdateQuery()
-	public void dbUpdateQuery(String query, String name, int ID) {
+	public void dbUpdateQuery(String query, Object[] user) {
 		try {
 			pstmt = conn.prepareStatement(query);
-			pstmt.setString(1, name);
-			pstmt.setInt(2, ID);
+			//pstmt.setString(1, name);
+			//pstmt.setInt(2, ID);
+
+			for(int i = 0; i < user.length; i++){
+				pstmt.setObject(i+1, user[i]);
+			}
 
 			if (pstmt.executeUpdate() == 0) {
 				System.out.println("Usuario No Actualizado\n");

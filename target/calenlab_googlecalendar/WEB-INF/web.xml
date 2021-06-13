@@ -26,4 +26,11 @@
     <servlet-class>servlets.CrearCalendario</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>EditarUsuario</servlet-name>
+    <display-name>EditarUsuario</display-name>
+    <description></description>
+    <servlet-class>servlets.EditarUsuario</servlet-class>
+  </servlet>
+
 </web-app>
