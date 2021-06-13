@@ -154,10 +154,10 @@ public class DB {
 		}
 	}
 
-	public void dbDeleteQuery(String query, int ID) {
+	public void dbDeleteQuery(String query, Object id) {
 		try {
 			pstmt = conn.prepareStatement(query);
-			pstmt.setInt(1, ID);
+			pstmt.setObject(1, id);
 
 			if (pstmt.executeUpdate() == 0) {
 				System.out.println("Usuario No Eliminado\n");
