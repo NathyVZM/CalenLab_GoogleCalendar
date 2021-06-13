@@ -13,12 +13,12 @@ public class Prueba_Main {
         System.out.println(Hashing.getHash("NathyVZM15&"));*/
 
         Object[] usuario = {"Nathalie", "Zambrano", "nathalievzm@hotmail.com", "nathyvzm", null, "NathyVZM"};
-        Object[] calendario = {1234, "URU", "Calendario de Tareas", "#00000"};
+        Object[] calendario = {9734897, "URU", "Calendario de Tareas", "#00000", 9734897};
 
         DB db = DB.getInstances();
         //System.out.println(propsR.getValue("updateUsers"));
         //db.dbInsertQuery(propsR.getValue("insertCalendars"), calendario);
-        db.dbUpdateQuery(propsR.getValue("updateUsers"), usuario);
+        db.dbUpdateQuery(propsR.getValue("updateCalendars"), calendario);
 
     }
     

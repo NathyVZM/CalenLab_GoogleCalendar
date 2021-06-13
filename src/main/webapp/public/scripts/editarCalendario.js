@@ -18,7 +18,7 @@ const mostrarIDCalendario = () => {
                 console.log(value);
             }
 
-            fetch("http://localhost:8080/EditarUsuario", {
+            fetch("http://localhost:8080/EditarCalendario", {
                 method: "PUT",
                 body: formulario
             }).then(response => {

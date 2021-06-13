@@ -12,6 +12,8 @@ public class EditCalendarController {
     private static PropertiesReader propsR = PropertiesReader.getInstances();
     private static DB db = DB.getInstances();
 
+    private EditCalendarController(){}
+
     public static String getIDCalendario(HttpServletRequest request) {
         try {
             String idCalendario = request.getParameter("idCalendario");
@@ -39,7 +41,7 @@ public class EditCalendarController {
         try {
             int idCalendario = Integer.parseInt(request.getParameter("idCalendario"));
             Object[] calendario = { idCalendario, request.getParameter("titulo"), request.getParameter("descripcion"),
-                    request.getParameter("color") };
+                    request.getParameter("color"), idCalendario };
 
             db.dbUpdateQuery(propsR.getValue("updateCalendars"), calendario);
 
