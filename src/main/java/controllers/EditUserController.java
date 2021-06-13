@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import helpers.DB;
+import helpers.Hashing;
 import helpers.PropertiesReader;
 
 public class EditUserController {
@@ -16,11 +17,12 @@ public class EditUserController {
 
     public static String editarUsuario(HttpServletRequest request) {
         try {
+            String hashPassword = Hashing.getHash(request.getParameter("password"));
             HttpSession session = request.getSession();
             String nomUsuario = (String) session.getAttribute("usuario");
 
             Object[] usuario = { request.getParameter("name"), request.getParameter("lastName"),
-                    request.getParameter("userName"), request.getParameter("password"), null, nomUsuario };
+                    request.getParameter("userName"), hashPassword, null, nomUsuario };
             db.dbUpdateQuery(propsR.getValue("updateUsers"), usuario);
 
             return "{\"message\": \"Usuario Editado\", \"status\": " + 200 + ", \"nomUsuario\": \"" + nomUsuario + "\"}";
