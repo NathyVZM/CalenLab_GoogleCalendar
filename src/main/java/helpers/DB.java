@@ -162,7 +162,7 @@ public class DB {
 			if (pstmt.executeUpdate() == 0) {
 				System.out.println("Usuario No Eliminado\n");
 			} else {
-				System.out.println("Usuario Eliminado Correctamente\n");
+				//System.out.println("Usuario Eliminado Correctamente\n");
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

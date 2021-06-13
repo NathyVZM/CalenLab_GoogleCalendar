@@ -10,19 +10,24 @@ public class DeleteCalendarController {
     private static PropertiesReader propsR = PropertiesReader.getInstances();
     private static DB db = DB.getInstances();
 
-    private DeleteCalendarController(){}
+    private DeleteCalendarController() {
+    }
 
-    public static String eliminarCalendario(HttpServletRequest request){
+    public static String eliminarCalendario(HttpServletRequest request) {
         try {
             HttpSession session = request.getSession();
             String nomUsuario = (String) session.getAttribute("usuario");
-            //Object[] user = {request.getParameter("idCalendario")};
 
-            db.dbDeleteQuery(propsR.getValue("deleteCalendars"), request.getParameter("idCalendario"));
+            int idCalendario = Integer.parseInt(request.getParameter("idCalendario"));
+
+            db.dbDeleteQuery(propsR.getValue("deleteCalendars"), idCalendario);
+
+            return "{\"message\": \"Calendario Eliminado\", \"idCalendario\": \"" + request.getParameter("idCalendario")
+                    + "\", \"status\": " + 200 + "}";
         } catch (Exception e) {
-            //TODO: handle exception
+            // TODO: handle exception
         }
         return "";
     }
-    
+
 }
