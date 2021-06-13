@@ -47,4 +47,11 @@
     <servlet-class>servlets.EliminarCalendario</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>EditarCalendario</servlet-name>
+    <display-name>EditarCalendario</display-name>
+    <description></description>
+    <servlet-class>servlets.EditarCalendario</servlet-class>
+  </servlet>
+
 </web-app>

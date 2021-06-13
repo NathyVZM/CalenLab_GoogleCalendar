@@ -6,12 +6,15 @@ servlets\EditarUsuario.class
 servlets\CrearCalendario.class
 servlets\LoginUsuario.class
 servlets\EliminarUsuario.class
+helpers\Calendario.class
 controllers\CreateCalendarController.class
 controllers\LoginController.class
+servlets\EditarCalendario.class
 helpers\DB.class
 servlets\EliminarCalendario.class
 helpers\PropertiesReader.class
 controllers\DeleteUserController.class
+controllers\EditCalendarController.class
 helpers\Prueba_Main.class
 servlets\RegistroUsuario.class
 controllers\DeleteCalendarController.class

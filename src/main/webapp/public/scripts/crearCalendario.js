@@ -22,6 +22,7 @@ const crearCalendario = () => {
         let calendario = document.createElement("input");
         let label = document.createElement("label");
         let boton = document.createElement("button");
+        let editar = document.createElement("button");
 
         calendario.type = "radio";
         calendario.name = "calendario";
@@ -51,6 +52,7 @@ const crearCalendario = () => {
                 return response.json();
             }).then(data => {
                 console.table(data);
+                editar.remove();
                 boton.remove();
                 label.remove();
                 calendario.remove();
@@ -58,9 +60,31 @@ const crearCalendario = () => {
 
         })
 
+        editar.type = "button";
+        editar.innerText = "Editar Calendario";
+        editar.id = `editar-${datos.idCalendario}`;
+        editar.onclick = () => {
+            let form = new FormData();
+            form.append("idCalendario", datos.idCalendario);
+
+            fetch("http://localhost:8080/EditarCalendario", {
+                method: "POST",
+                body: form
+            }).then(response => {
+                return response.json();
+            }).then(respuesta => {
+                console.table(respuesta);
+
+                if(respuesta.status == 200) {
+                    window.location.href = "http://localhost:8080/public/views/editarCalendario.html";
+                }
+            });
+        }
+
         div.appendChild(calendario);
         div.appendChild(label);
         div.appendChild(boton);
+        div.appendChild(editar);
         document.body.appendChild(div);
     })
 }
