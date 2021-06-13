@@ -9,7 +9,9 @@ servlets\EliminarUsuario.class
 controllers\CreateCalendarController.class
 controllers\LoginController.class
 helpers\DB.class
+servlets\EliminarCalendario.class
 helpers\PropertiesReader.class
 controllers\DeleteUserController.class
 helpers\Prueba_Main.class
 servlets\RegistroUsuario.class
+controllers\DeleteCalendarController.class

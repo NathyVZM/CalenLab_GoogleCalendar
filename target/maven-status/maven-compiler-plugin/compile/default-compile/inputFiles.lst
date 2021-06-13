@@ -1,6 +1,7 @@
 C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\servlets\CrearCalendario.java
 C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\helpers\PropertiesReader.java
 C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\controllers\CreateCalendarController.java
+C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\controllers\DeleteCalendarController.java
 C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\helpers\Hashing.java
 C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\controllers\EditUserController.java
 C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\servlets\EliminarUsuario.java
@@ -8,6 +9,7 @@ C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecale
 C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\servlets\EditarUsuario.java
 C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\controllers\LoginController.java
 C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\helpers\Prueba_Main.java
+C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\servlets\EliminarCalendario.java
 C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\servlets\LoginUsuario.java
 C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\controllers\RegisterController.java
 C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\helpers\DB.java

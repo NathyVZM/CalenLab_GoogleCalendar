@@ -40,4 +40,11 @@
     <servlet-class>servlets.EliminarUsuario</servlet-class>
   </servlet>
 
+   <servlet>
+    <servlet-name>EliminarCalendario</servlet-name>
+    <display-name>EliminarCalendario</display-name>
+    <description></description>
+    <servlet-class>servlets.EliminarCalendario</servlet-class>
+  </servlet>
+
 </web-app>

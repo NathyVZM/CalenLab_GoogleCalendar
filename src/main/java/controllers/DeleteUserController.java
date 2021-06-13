@@ -19,6 +19,8 @@ public class DeleteUserController {
             HttpSession session = request.getSession();
             String nomUsuario = (String) session.getAttribute("usuario");
 
+            Object[] user = {nomUsuario};
+
             db.dbDeleteQuery(propsR.getValue("deleteUsers"), nomUsuario);
             return "{\"message\": \"Usuario Eliminado\", \"status\": " + 200 + ", \"nomUsuario\": \"" + nomUsuario + "\"}";
 
