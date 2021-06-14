@@ -16,6 +16,19 @@ const crearEvento = () => {
         return response.json();
     }).then(data => {
         console.table(data);
+
+        let div = document.getElementById("contenedor-eventos");
+
+        let evento = document.createElement("div");
+        evento.name = "evento";
+        evento.id = data.idEvento;
+
+        let titulo = document.createElement("h3");
+        titulo.id = `titulo-${data.idEvento}`;
+        titulo.innerText = data.titulo;
+
+        evento.appendChild(titulo);
+        div.appendChild(evento);
     })
 }
 

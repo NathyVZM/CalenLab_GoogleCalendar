@@ -61,4 +61,11 @@
     <servlet-class>servlets.Calendarios</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>CrearEvento</servlet-name>
+    <display-name>CrearEvento</display-name>
+    <description></description>
+    <servlet-class>servlets.CrearEvento</servlet-class>
+  </servlet>
+
 </web-app>

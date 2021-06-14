@@ -11,7 +11,7 @@
     <form action="" id="formulario-calendario">
         <input type="text" placeholder="titulo" name="titulo">
         <input type="text" placeholder="descripcion" name="descripcion">
-        <input type="text" placeholder="color" name="color">
+        <input type="color" placeholder="color" name="color">
 
         <button type="button" id="boton-calendario">Enviar</button>
     </form>
@@ -27,10 +27,11 @@
         <select name="calendario-evento" id="seleccion-calendario"></select>
         <input type="text" placeholder="Aniadir una descripcion" name="descripcion">
         <input type="text" placeholder="Aniadir una imagen" name="imagen">
-        <input type="color" placeholder="color" name="color2">
 
         <button type="button" id="boton-evento">Crear Evento</button>
     </form>
+
+    <div id="contenedor-eventos"></div>
     
     <script src="../scripts/mostrarCalendario.js"></script>
     <script src="../scripts/crearCalendario.js"></script>

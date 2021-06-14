@@ -28,7 +28,8 @@ public class CreateEventController {
             } else {
                 return "{\"message\": \"Evento creado\", \"status\": " + 200 + ", \"idEvento\": " + idEvento
                         + ", \"idCalendario\": " + idCalendario + ", \"titulo\": \"" + request.getParameter("titulo")
-                        + "\"}";
+                        + "\", \"fecha\": \"" + request.getParameter("fecha") + "\", \"descripcion\": \"" + request.getParameter("descripcion")
+                        + "\", \"imagen\": \"" + request.getParameter("imagen") + "\", \"hora\": \"" + request.getParameter("hora") + "\"}";
             }
         } catch (Exception e) {
             // TODO: handle exception
