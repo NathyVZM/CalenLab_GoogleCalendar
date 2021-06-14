@@ -91,6 +91,7 @@ const crearCalendario = () => {
         let opcion = document.createElement("option");
         opcion.value = datos.idCalendario;
         opcion.innerText = datos.titulo;
+        opcion.id = datos.idCalendario;
 
         select.appendChild(opcion);
     })
