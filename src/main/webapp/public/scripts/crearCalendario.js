@@ -86,6 +86,14 @@ const crearCalendario = () => {
         div.appendChild(boton);
         div.appendChild(editar);
         document.body.appendChild(div);
+
+        let select = document.getElementById("seleccion-calendario");
+        let opcion = document.createElement("option");
+        opcion.value = datos.idCalendario;
+        opcion.innerText = datos.titulo;
+        opcion.id = datos.idCalendario;
+
+        select.appendChild(opcion);
     })
 }
 

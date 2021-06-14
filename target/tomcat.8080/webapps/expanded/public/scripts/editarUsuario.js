@@ -16,6 +16,9 @@ const enviarEdicion = () => {
         return response.json();
     }).then(datos => {
         console.table(datos);
+        if(datos.status == 200){
+            window.location.href = "http://localhost:8080/public/views/principal.html";
+        }
     })
 }
 

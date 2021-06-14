@@ -48,6 +48,7 @@ const mostrarCalendarios = () => {
                     boton.remove();
                     label.remove();
                     calendario.remove();
+                    document.getElementById(`opcion${datos.idCalendario[i]}`).remove();
                 })
     
             })
@@ -78,7 +79,19 @@ const mostrarCalendarios = () => {
             div.appendChild(boton);
             div.appendChild(editar);
         }
+
         document.body.appendChild(div);
+
+        let select = document.getElementById("seleccion-calendario");
+
+        for(let i = 0; i < datos.idCalendario.length; i++){
+            let opcion = document.createElement("option");
+            opcion.value = datos.idCalendario[i];
+            opcion.innerText = datos.titulo[i];
+            opcion.id = `opcion-${datos.idCalendario[i]}`;
+
+            select.appendChild(opcion);
+        }
     })
 }
 

@@ -126,23 +126,12 @@ public class DB {
 	public int dbInsertQuery(String query, Object[] usuario) {
 		try {
 			pstmt = conn.prepareStatement(query);
-			/*pstmt.setObject(1, usuario[0]);
-			pstmt.setObject(2, usuario[1]);
-			pstmt.setObject(3, usuario[2]);
-			pstmt.setObject(4, usuario[3]);
-			pstmt.setObject(5, null);*/
 
 			for(int i = 0; i < usuario.length; i++) {
 				pstmt.setObject(i + 1, usuario[i]);
 			}
 
 			return pstmt.executeUpdate();
-
-			/*
-			 * if(pstmt.executeUpdate() == 0) {
-			 * System.out.println("Usuario No Ingresado\n"); } else {
-			 * System.out.println("Usuario Ingresado Correctamente\n"); }
-			 */
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

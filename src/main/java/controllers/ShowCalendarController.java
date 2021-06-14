@@ -8,6 +8,8 @@ import helpers.PropertiesReader;
 
 public class ShowCalendarController {
 
+    private ShowCalendarController(){}
+
     private static PropertiesReader propsR = PropertiesReader.getInstances();
     private static DB db = DB.getInstances();
 
@@ -35,7 +37,7 @@ public class ShowCalendarController {
             return retorno.toString();
         } catch (Exception e) {
             //TODO: handle exception
-            return "";
+            return "{\"message\": \"Error al obtener calendarios\", \"status\": " + 500 + "}";
         }
     }
     

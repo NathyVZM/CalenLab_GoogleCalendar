@@ -78,7 +78,18 @@ const mostrarCalendarios = () => {
             div.appendChild(boton);
             div.appendChild(editar);
         }
+
         document.body.appendChild(div);
+
+        let select = document.getElementById("seleccion-calendario");
+
+        for(let i = 0; i < datos.idCalendario.length; i++){
+            let opcion = document.createElement("option");
+            opcion.value = datos.idCalendario[i];
+            opcion.innerText = datos.titulo[i];
+
+            select.appendChild(opcion);
+        }
     })
 }
 
