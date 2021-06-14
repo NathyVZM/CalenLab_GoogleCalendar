@@ -1,10 +1,12 @@
 controllers\RegisterController.class
+servlets\Calendarios.class
 helpers\Auth.class
 helpers\Hashing.class
 controllers\EditUserController.class
 servlets\EditarUsuario.class
 servlets\CrearCalendario.class
 servlets\LoginUsuario.class
+controllers\ShowCalendarController.class
 servlets\EliminarUsuario.class
 helpers\Calendario.class
 controllers\CreateCalendarController.class

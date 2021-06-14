@@ -15,8 +15,24 @@ public class ShowCalendarController {
         try {
             HttpSession session = request.getSession();
             String nomUsuario = (String) session.getAttribute("usuario");
-            Object[] calendarios = db.dbSelectCalendar(propsR.getValue("selectIDCalendars"), nomUsuario);
-            return "{\"message\": \"Calendarios obtenidos\", \"status\": " + 200 + ", \"idCalendario\": [" + calendarios + "]}";
+            Object[] idcalendarios = db.dbSelectCalendar(propsR.getValue("selectIDCalendars"), nomUsuario);
+            Object[] titulos = db.dbSelectCalendar(propsR.getValue("selectTitleCalendars"), nomUsuario);
+            
+            StringBuilder retorno = new StringBuilder();
+            retorno.append("{\"message\": \"Calendarios obtenidos\", \"status\":" + 200 + ", \"idCalendario\": [");
+            for(int i = 0; i < idcalendarios.length; i++){
+                retorno.append("\"" + idcalendarios[i].toString() + "\",");
+            }
+            retorno = retorno.deleteCharAt(retorno.length() -1);
+            retorno.append("], \"titulo\": [");
+
+            for(int i = 0; i < titulos.length; i++){
+                retorno.append("\"" + titulos[i].toString() + "\"");
+            }
+            retorno = retorno.deleteCharAt(retorno.length() - 1);
+            retorno.append("]}");
+            
+            return retorno.toString();
         } catch (Exception e) {
             //TODO: handle exception
             return "";

@@ -23,14 +23,15 @@ public class Prueba_Main {
         //db.dbUpdateQuery(propsR.getValue("updateCalendars"), calendario);
 
         Object[] arreglo = db.dbSelectCalendar(propsR.getValue("selectIDCalendars"), "NathyVZM");
-        
-        /*for(int i = 0; i < arreglo.size(); i++){
-            System.out.println(arreglo.get(i));
-        }*/
+        Object[] titulo = db.dbSelectCalendar(propsR.getValue("selectTitleCalendars"), "NathyVZM");
 
         //Object[] array = arreglo.toArray();
         for(int i = 0; i < arreglo.length; i++){
             System.out.println(arreglo[i]);
+        }
+
+        for(int i = 0; i < titulo.length; i++){
+            System.out.println(titulo[i]);
         }
 
     }

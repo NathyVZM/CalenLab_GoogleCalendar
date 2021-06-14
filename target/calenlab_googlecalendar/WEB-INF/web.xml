@@ -54,4 +54,11 @@
     <servlet-class>servlets.EditarCalendario</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>Calendarios</servlet-name>
+    <display-name>Calendarios</display-name>
+    <description></description>
+    <servlet-class>servlets.Calendarios</servlet-class>
+  </servlet>
+
 </web-app>
