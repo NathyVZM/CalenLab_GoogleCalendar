@@ -1,5 +1,7 @@
 package helpers;
 
+import java.util.ArrayList;
+
 public class Prueba_Main {
 
     public static void main(String[] args) {
@@ -18,7 +20,18 @@ public class Prueba_Main {
         DB db = DB.getInstances();
         //System.out.println(propsR.getValue("updateUsers"));
         //db.dbInsertQuery(propsR.getValue("insertCalendars"), calendario);
-        db.dbUpdateQuery(propsR.getValue("updateCalendars"), calendario);
+        //db.dbUpdateQuery(propsR.getValue("updateCalendars"), calendario);
+
+        Object[] arreglo = db.dbSelectCalendar(propsR.getValue("selectIDCalendars"), "NathyVZM");
+        
+        /*for(int i = 0; i < arreglo.size(); i++){
+            System.out.println(arreglo.get(i));
+        }*/
+
+        //Object[] array = arreglo.toArray();
+        for(int i = 0; i < arreglo.length; i++){
+            System.out.println(arreglo[i]);
+        }
 
     }
     

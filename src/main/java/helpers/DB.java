@@ -1,8 +1,11 @@
 package helpers;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class DB {
+
+	Object[] ids;
 
 	// ATTRIBUTES
 	private static DB db = new DB();
@@ -88,6 +91,35 @@ public class DB {
 				e.printStackTrace();
 			}
 		}
+	}
+
+	public Object[] dbSelectCalendar(String query, String nomUsuario) {
+		ArrayList<Object> arreglo = new ArrayList<>();
+		try {
+			pstmt = conn.prepareStatement(query);
+			pstmt.setObject(1, nomUsuario);
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				arreglo.add(rs.getObject(1));
+			}
+
+			Object[] id = arreglo.toArray();
+
+			return id;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				pstmt.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return null;
 	}
 
 	// METHOD - dbPreparedStatement()
