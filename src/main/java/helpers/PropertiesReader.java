@@ -14,7 +14,7 @@ public class PropertiesReader {
 	public PropertiesReader() {
 		try {
 			// LOCALIZANDO ARCHIVO PROPERTIES
-			fis = new FileInputStream("src/main/java/helpers/herokuProperties.properties");
+			fis = new FileInputStream("src/main/java/helpers/dbProperties.properties");
 
 			// CREANDO OBJETO PROPERTIES Y CARGANDO LA DATA
 			props = new Properties();

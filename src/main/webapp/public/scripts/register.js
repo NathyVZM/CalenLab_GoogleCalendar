@@ -9,7 +9,7 @@ const enviarRegistro = () => {
         console.log(value);
     }
 
-    fetch("https://calenlab.herokuapp.com/RegistroUsuario", {
+    fetch("http://localhost:8080/RegistroUsuario", {
         method: "POST",
         body: formulario
     }).then(response => {
@@ -22,7 +22,7 @@ const enviarRegistro = () => {
 
 const redireccionar = (status) => {
     if(status == 200) {
-        window.location.href = "https://calenlab.herokuapp.com/public/views/registroRedireccion.html";
+        window.location.href = "http://localhost:8080/public/views/registroRedireccion.html";
     }
 }
 
