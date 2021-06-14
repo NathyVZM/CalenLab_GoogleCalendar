@@ -93,7 +93,7 @@ public class DB {
 		}
 	}
 
-	public Object[] dbSelectCalendar(String query, String nomUsuario) {
+	public Object[] dbSelectCalendar(String query, Object nomUsuario) {
 		ArrayList<Object> arreglo = new ArrayList<>();
 		try {
 			pstmt = conn.prepareStatement(query);

@@ -68,4 +68,11 @@
     <servlet-class>servlets.CrearEvento</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>Eventos</servlet-name>
+    <display-name>Eventos</display-name>
+    <description></description>
+    <servlet-class>servlets.Eventos</servlet-class>
+  </servlet>
+
 </web-app>

@@ -20,6 +20,60 @@ const mostrarCalendarios = () => {
             calendario.name = "calendario";
             calendario.id = datos.idCalendario[i];
             calendario.value = datos.idCalendario[i];
+            calendario.onchange = (e) => {
+                let form = new FormData()
+                form.append("idCalendario", e.target.id);
+                for (let value of form.values()) {
+                    console.log(value);
+                }
+
+                fetch("http://localhost:8080/Eventos", {
+                    method: "POST",
+                    body: form
+                }).then(response => {
+                    return response.json();
+                }).then(lista => {
+                    console.table(lista);
+
+                    let contenedor_eventos = document.getElementById("contenedor-eventos");
+
+                    for(let j = 0; j < lista.idEvento.length; j++){
+                        let evento = document.createElement("div");
+                        evento.name = "evento";
+                        evento.id = lista.idEvento[j];
+                        evento.onclick = () => {
+                            let evento_div = document.createElement("div");
+                            evento_div.id = `evento-${lista.idEvento[j]}`;
+
+                            let titulo_evento = document.createElement("h3");
+                            titulo_evento.innerText = lista.titulo[j];
+
+                            let fecha = document.createElement("p");
+                            fecha.innerText = lista.fecha[j];
+
+                            let hora = document.createElement("p");
+                            hora.innerText = lista.hora[j];
+
+                            let descripcion = document.createElement("p");
+                            descripcion.innerText = lista.descripcion[j];
+
+                            evento_div.appendChild(titulo_evento)
+                            evento_div.appendChild(fecha);
+                            evento_div.appendChild(hora)
+                            evento_div.appendChild(descripcion)
+
+                            evento.appendChild(evento_div);
+                        }
+
+                        let titulo = document.createElement("h3");
+                        titulo.id = `titulo-${lista.idEvento[j]}`;
+                        titulo.innerText = lista.titulo[j];
+
+                        evento.appendChild(titulo);
+                        contenedor_eventos.appendChild(evento);
+                    }
+                })
+            };
 
             label.innerText = datos.titulo[i];
             label.htmlFor = datos.idCalendario[i];
@@ -30,13 +84,13 @@ const mostrarCalendarios = () => {
             boton.addEventListener("click", (e) => {
                 console.log(e.target.id)
                 console.log(datos.titulo[i]);
-    
+
                 let form = new FormData();
                 form.append("idCalendario", datos.idCalendario[i]);
-                for(let value of form.values()){
+                for (let value of form.values()) {
                     console.log(value);
                 }
-    
+
                 fetch("http://localhost:8080/EliminarCalendario", {
                     method: "DELETE",
                     body: form
@@ -50,7 +104,7 @@ const mostrarCalendarios = () => {
                     calendario.remove();
                     document.getElementById(`opcion${datos.idCalendario[i]}`).remove();
                 })
-    
+
             })
 
             editar.type = "button";
@@ -59,7 +113,7 @@ const mostrarCalendarios = () => {
             editar.onclick = () => {
                 let form = new FormData();
                 form.append("idCalendario", datos.idCalendario[i]);
-    
+
                 fetch("http://localhost:8080/EditarCalendario", {
                     method: "POST",
                     body: form
@@ -67,8 +121,8 @@ const mostrarCalendarios = () => {
                     return response.json();
                 }).then(respuesta => {
                     console.table(respuesta);
-    
-                    if(respuesta.status == 200) {
+
+                    if (respuesta.status == 200) {
                         window.location.href = "http://localhost:8080/public/views/editarCalendario.html";
                     }
                 });
@@ -84,7 +138,7 @@ const mostrarCalendarios = () => {
 
         let select = document.getElementById("seleccion-calendario");
 
-        for(let i = 0; i < datos.idCalendario.length; i++){
+        for (let i = 0; i < datos.idCalendario.length; i++) {
             let opcion = document.createElement("option");
             opcion.value = datos.idCalendario[i];
             opcion.innerText = datos.titulo[i];

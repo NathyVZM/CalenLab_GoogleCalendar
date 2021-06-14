@@ -29,8 +29,6 @@ const crearEvento = () => {
 
         evento.appendChild(titulo);
         div.appendChild(evento);
-
-        
     })
 }
 
