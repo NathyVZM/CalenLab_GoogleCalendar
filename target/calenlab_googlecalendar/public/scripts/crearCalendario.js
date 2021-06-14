@@ -30,7 +30,7 @@ const crearCalendario = () => {
         calendario.value = datos.idCalendario;
 
         label.innerText = datos.titulo;
-        label.htmlFor = datos.titulo;
+        label.htmlFor = datos.idCalendario;
 
         boton.type = "button";
         boton.innerText = "Eliminar"

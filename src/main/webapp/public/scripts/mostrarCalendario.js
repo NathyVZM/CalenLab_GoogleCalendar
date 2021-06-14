@@ -27,10 +27,51 @@ const mostrarCalendarios = () => {
             boton.type = "button";
             boton.innerText = "Eliminar"
             boton.id = `eliminar-${datos.idCalendario[i]}`;
+            boton.addEventListener("click", (e) => {
+                console.log(e.target.id)
+                console.log(datos.titulo[i]);
+    
+                let form = new FormData();
+                form.append("idCalendario", datos.idCalendario[i]);
+                for(let value of form.values()){
+                    console.log(value);
+                }
+    
+                fetch("http://localhost:8080/EliminarCalendario", {
+                    method: "DELETE",
+                    body: form
+                }).then(response => {
+                    return response.json();
+                }).then(data => {
+                    console.table(data);
+                    editar.remove();
+                    boton.remove();
+                    label.remove();
+                    calendario.remove();
+                })
+    
+            })
 
             editar.type = "button";
             editar.innerText = "Editar Calendario";
             editar.id = `editar-${datos.idCalendario[i]}`;
+            editar.onclick = () => {
+                let form = new FormData();
+                form.append("idCalendario", datos.idCalendario[i]);
+    
+                fetch("http://localhost:8080/EditarCalendario", {
+                    method: "POST",
+                    body: form
+                }).then(response => {
+                    return response.json();
+                }).then(respuesta => {
+                    console.table(respuesta);
+    
+                    if(respuesta.status == 200) {
+                        window.location.href = "http://localhost:8080/public/views/editarCalendario.html";
+                    }
+                });
+            }
 
             div.appendChild(calendario);
             div.appendChild(label);

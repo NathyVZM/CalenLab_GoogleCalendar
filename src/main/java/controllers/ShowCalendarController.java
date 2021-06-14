@@ -27,7 +27,7 @@ public class ShowCalendarController {
             retorno.append("], \"titulo\": [");
 
             for(int i = 0; i < titulos.length; i++){
-                retorno.append("\"" + titulos[i].toString() + "\"");
+                retorno.append("\"" + titulos[i].toString() + "\",");
             }
             retorno = retorno.deleteCharAt(retorno.length() - 1);
             retorno.append("]}");
