@@ -10,7 +10,7 @@ const enviarLogin = () => {
         console.log(value);
     }
 
-    fetch("http://localhost:8080/LoginUsuario", {
+    fetch("https://calenlab.herokuapp.com/LoginUsuario", {
         method: "POST",
         body: formulario
     }).then(response => {
@@ -23,7 +23,7 @@ const enviarLogin = () => {
 
 const redireccionar = (status) => {
     if(status == 200) {
-        window.location.href = "http://localhost:8080/public/views/principal.html";
+        window.location.href = "https://calenlab.herokuapp.com/public/views/principal.html";
     }
 }
 
