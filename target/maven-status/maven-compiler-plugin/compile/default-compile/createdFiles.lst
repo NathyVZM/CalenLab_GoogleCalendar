@@ -8,8 +8,10 @@ servlets\CrearCalendario.class
 servlets\LoginUsuario.class
 controllers\ShowCalendarController.class
 servlets\EliminarUsuario.class
+servlets\CrearEvento.class
 helpers\Calendario.class
 controllers\CreateCalendarController.class
+controllers\CreateEventController.class
 controllers\LoginController.class
 servlets\EditarCalendario.class
 helpers\DB.class

@@ -9,11 +9,8 @@ const crearEvento = () => {
         console.log(value);
     }
 
-    let fecha = document.getElementsByName("fecha")[0].value;
-    let hora = document.getElementsByName("hora")[0].value;
-
-    let evento = new Date(`${fecha}T${hora}`);
-    console.log(typeof fecha);
+    let color = document.getElementsByName("color2")[0].value;
+    console.log(typeof color);
 }
 
 boton_evento.onclick = crearEvento;

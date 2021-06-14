@@ -8,6 +8,15 @@ const crearEvento = () => {
     for(let value of form.values()){
         console.log(value);
     }
+
+    fetch("http://localhost:8080/CrearEvento", {
+        method: "POST",
+        body: form
+    }).then(response => {
+        return response.json();
+    }).then(data => {
+        console.table(data);
+    })
 }
 
 boton_evento.onclick = crearEvento;

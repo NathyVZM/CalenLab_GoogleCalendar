@@ -30,7 +30,7 @@ public class Prueba_Main {
             System.out.println(titulo[i]);
         }*/
 
-        Object[] evento = {2222, 1111, "calenlab", java.sql.Date.valueOf("2021-06-15"), "tareas de uru", null, java.sql.Time.valueOf("23:30:00")};
+        Object[] evento = {1111, 1111, "calenlab", java.sql.Date.valueOf("2021-06-15"), "tareas de uru", null, java.sql.Time.valueOf("23:30:00")};
         db.dbInsertQuery(propsR.getValue("insertEvents"), evento);
 
     }
