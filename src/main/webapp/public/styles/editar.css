@@ -28,6 +28,13 @@ header div:first-child a {
     color: #EB3B49;
     font-weight: bold;
     font-size: 1.2em;
+    transition: transform 0.2s ease-in-out 0s, box-shadow 0.2s ease-in-out 0s;
+}
+
+header div:first-child a:hover{
+    transform: scale(1.02);
+    box-shadow: white 0px 0px 5px;
+    cursor: pointer;
 }
 
 header div:last-child {
@@ -143,6 +150,13 @@ form input[type="color"]{
     font-size: 1.2em;
     cursor: pointer;
     font-weight: bold;
+    transition: transform 0.2s ease-in-out 0s, box-shadow 0.2s ease-in-out 0s;
+}
+
+.boton:hover {
+    transform: scale(1.02);
+    box-shadow: #a32b35 0px 0px 5px;
+    cursor: pointer;
 }
 
 @font-face {
