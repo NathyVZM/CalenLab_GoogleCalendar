@@ -11,10 +11,14 @@ const mostrarCalendarios = () => {
         let div = document.getElementById("contenedor-calendarios");
 
         for (let i = 0; i < datos.idCalendario.length; i++) {
+            let contenedor = document.createElement("div");
             let calendario = document.createElement("input");
             let label = document.createElement("label");
-            let boton = document.createElement("button");
-            let editar = document.createElement("button");
+            let boton = document.createElement("span");
+            let editar = document.createElement("span");
+
+            let imgBorrar = document.createElement("img");
+            let imgEditar = document.createElement("img");
 
             calendario.type = "radio";
             calendario.name = "calendario";
@@ -35,7 +39,8 @@ const mostrarCalendarios = () => {
                 }).then(lista => {
                     console.table(lista);
 
-                    //let contenedor_eventos = document.getElementById("contenedor-eventos");
+                    let contenedor_eventos = document.getElementById("eventos");
+                    contenedor_eventos.innerHTML = "";
 
                     for(let j = 0; j < lista.idEvento.length; j++){
                         let fechaDate = new Date(`${lista.fecha[j]}T${lista.hora[j]}`);
@@ -44,7 +49,8 @@ const mostrarCalendarios = () => {
                         let evento = document.createElement("div");
                         evento.name = "evento";
                         evento.id = lista.idEvento[j];
-                        evento.onclick = () => {
+                        evento.style.backgroundColor = datos.color[i];
+                        /*evento.onclick = () => {
                             let evento_div = document.createElement("div");
                             evento_div.id = `evento-${lista.idEvento[j]}`;
 
@@ -66,15 +72,22 @@ const mostrarCalendarios = () => {
                             evento_div.appendChild(descripcion)
 
                             evento.appendChild(evento_div);
-                        }
+                        }*/
 
-                        let titulo = document.createElement("h3");
+                        let titulo = document.createElement("p");
                         titulo.id = `titulo-${lista.idEvento[j]}`;
                         titulo.innerText = lista.titulo[j];
 
-                        //caja.appendChild(titulo);
+                        let spanEvento = document.createElement("span");
+                        let imgEvento = document.createElement("img");
+
+                        imgEvento.src = "../assets/icons/close2.svg";
+                        spanEvento.appendChild(imgEvento);
+
+                        evento.appendChild(spanEvento);
                         evento.appendChild(titulo);
                         caja.appendChild(evento);
+                        contenedor_eventos.appendChild(evento);
                     }
                 })
             };
@@ -82,8 +95,10 @@ const mostrarCalendarios = () => {
             label.innerText = datos.titulo[i];
             label.htmlFor = datos.idCalendario[i];
 
-            boton.type = "button";
-            boton.innerText = "Eliminar"
+            imgBorrar.src = "../assets/icons/close2.svg";
+            imgEditar.src = "../assets/icons/close2.svg";
+
+            boton.appendChild(imgBorrar);
             boton.id = `eliminar-${datos.idCalendario[i]}`;
             boton.addEventListener("click", (e) => {
                 console.log(e.target.id)
@@ -111,8 +126,8 @@ const mostrarCalendarios = () => {
 
             })
 
-            editar.type = "button";
-            editar.innerText = "Editar Calendario";
+
+            editar.appendChild(imgEditar);
             editar.id = `editar-${datos.idCalendario[i]}`;
             editar.onclick = () => {
                 let form = new FormData();
@@ -132,10 +147,11 @@ const mostrarCalendarios = () => {
                 });
             }
 
-            div.appendChild(calendario);
-            div.appendChild(label);
-            div.appendChild(boton);
-            div.appendChild(editar);
+            contenedor.appendChild(calendario);
+            contenedor.appendChild(label);
+            contenedor.appendChild(boton);
+            contenedor.appendChild(editar);
+            div.appendChild(contenedor);
         }
 
         document.body.appendChild(div);

@@ -1,0 +1,295 @@
+/*principal.css*/
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body {
+    height: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row wrap;
+    background: #EB3B49 url("../assets/images/calendarPatternDark30.png");
+    padding: 1%;
+}
+
+header h1 {
+    margin-top: 1.2%;
+    font-weight: bold;
+    color: white;
+}
+
+header h2 {
+    margin-top: 1%;
+    color: white;
+}
+
+header img {
+    width: 7%;
+}
+
+header div:first-child {
+    flex: 1;
+}
+
+header div:first-child img {
+    float: left;
+    margin-right: 1%;
+}
+
+header div:last-child {
+    flex: 1;
+    text-align: right;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+header div:last-child div img {
+    float: right;
+}
+
+header div:last-child div:first-child {
+    flex: 3;
+}
+
+header div:last-child div:first-child img{
+    width: 7%;
+    margin-left: 1%;
+}
+
+header div:last-child div:last-child {
+    flex: 0.3;
+}
+
+header div:last-child div:last-child img {
+    width: 100%;
+}
+
+/*main div:last-child {
+    flex: 1;
+}*/
+
+main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row wrap;
+    height: 100%;
+    /*background-color: blueviolet;
+    overflow: hidden;*/
+}
+
+#barraIzquierda {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column wrap;
+    border-right: 1px solid #EB3B49;
+    height: 110%;
+    /*margin-top: -15%;*/
+    overflow: scroll;
+}
+
+#barraIzquierda div {
+    flex: 1;
+    width: 90%;
+    align-self: flex-start;
+    padding: 8%;
+    height: 100%;
+}
+
+#botones-crear {
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+#botones-crear button {
+    display: block;
+    padding: 4%;
+    margin: 1%;
+    background-color: #EB3B49;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 1.2em;
+    font-family: montserrat_alternates;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+#contenedor-calendarios {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: column wrap;
+}
+
+#contenedor-calendarios h2 {
+    font-size: 1.2em;
+    color: #EB3B49;
+}
+
+#contenedor-calendarios img {
+    width: 7%;
+}
+
+#cajaFormularioCalendario, #cajaFormularioEvento{
+    display: none;
+}
+
+#barraCentro {
+    padding: 2%;
+    height: 100%;
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: row wrap;
+    border-right: 1px solid #EB3B49;
+    overflow: scroll;
+}
+
+#barraCentro div:first-child {
+    position: relative;
+}
+
+#barraCentro div:last-child {
+    /*height: 100%;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    width: 100%;
+}
+
+#barraCentro h2 {
+    flex: 1;
+    color: #EB3B49;
+}
+
+#barraCentro div:first-child span:first-child {
+    position: absolute;
+    left: 160px;
+}
+
+#barraCentro div:first-child span:last-child {
+    position: absolute;
+    left: 200px;
+}
+
+#barraCentro img {
+    cursor: pointer;
+    transition: background-color 0.2s ease-in 0s;
+}
+
+#barraCentro img:hover {
+    background-color: lightgray;
+}
+
+#barraCentro div:last-child div {
+    flex: 10;
+    /*overflow: scroll;*/
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: row wrap;
+}
+
+#barraCentro table {
+    text-align: center;
+    flex: 1;
+    margin-top: 1%;
+    width: 100%;
+    border-collapse: collapse;
+    /*background-color: blue;*/
+}
+
+#barraCentro table td {
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    padding: 2.5%;
+}
+
+#barraCentro table th {
+    padding: 2.5%;
+}
+
+#contenedor-eventos {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-flow: column wrap;
+    padding: 2%;
+    height: 100%;
+}
+
+/*#contenedor_eventos h2 {
+    padding: 2%;
+    flex: 1;
+}*/
+
+#contenedor-eventos h2 {
+    color: #EB3B49;
+}
+
+#contenedor-eventos > div:first-child {
+    flex: 1;
+    padding: 2%;
+}
+
+#contenedor-eventos > div:last-child {
+    flex: 10;
+}
+
+#contenedor-eventos > div:last-child div{
+    padding: 6%;
+}
+
+#contenedor-eventos > div:last-child div span {
+    float: left;
+}
+
+#contenedor-eventos > div:last-child div img {
+    width: 90%;
+}
+
+@font-face {
+    font-family: "comfortaa";
+    src: url("../assets/fonts/Comfortaa/Comfortaa-Bold.ttf");
+}
+
+@font-face {
+    font-family: "rubik";
+    src: url("../assets/fonts/Rubik/Rubik-Medium.ttf");
+}
+
+@font-face {
+    font-family: "montserrat_alternates";
+    src: url("../assets/fonts/Montserrat_Alternates/MontserratAlternates-Regular.ttf");
+}
+
+h1 {
+    font-family: comfortaa;
+}
+
+h2 {
+    font-family: rubik;
+}
+
+p, address, small, li, label, table{
+    font-family: montserrat_alternates;
+}
+
+a {
+    font-family: montserrat_alternates;
+    text-decoration: none;
+}
