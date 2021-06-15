@@ -35,14 +35,14 @@ function escribirNumeros(currentDate) {
     mes_anio.innerHTML = `${meses[currentDate.getMonth()]}, ${currentDate.getFullYear()}`;
 
     if(currentDate.getDay() == 0){
-        for (let i = 0; i < 7; i++) {
+        for (let i = 1; i < 8; i++) {
             contenido_dias[i].innerHTML = currentDate.getDate();
             currentDate.setDate(currentDate.getDate() + 1);
         }
     }
     else {
         currentDate.setDate(currentDate.getDate() - currentDate.getDay())
-        for (let i = 0; i < 7; i++) {
+        for (let i = 1; i < 8; i++) {
             contenido_dias[i].innerHTML = currentDate.getDate();
             currentDate.setDate(currentDate.getDate() + 1);
         }
@@ -51,7 +51,7 @@ function escribirNumeros(currentDate) {
 
 function escribirNumerosAAtras(currentDate, currentMonth, currentYear) {
     mes_anio.innerHTML = `${meses[currentDate.getMonth()]}, ${currentDate.getFullYear()}`;
-    for (let i = 6; i >= 0; i--) {
+    for (let i = 7; i >= 1; i--) {
         currentDate.setDate(currentDate.getDate() - 1);
         contenido_dias[i].innerHTML = currentDate.getDate();
     }
