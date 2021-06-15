@@ -1,7 +1,7 @@
 //mostrarCalendario
 
 const mostrarCalendarios = () => {
-    fetch("https://calenlab.herokuapp.com/Calendarios", {
+    fetch("http://localhost:8080/Calendarios", {
         method: "GET"
     }).then(response => {
         return response.json();
@@ -27,7 +27,7 @@ const mostrarCalendarios = () => {
                     console.log(value);
                 }
 
-                fetch("https://calenlab.herokuapp.com/Eventos", {
+                fetch("http://localhost:8080/Eventos", {
                     method: "POST",
                     body: form
                 }).then(response => {
@@ -91,7 +91,7 @@ const mostrarCalendarios = () => {
                     console.log(value);
                 }
 
-                fetch("https://calenlab.herokuapp.com/EliminarCalendario", {
+                fetch("http://localhost:8080/EliminarCalendario", {
                     method: "DELETE",
                     body: form
                 }).then(response => {
@@ -114,7 +114,7 @@ const mostrarCalendarios = () => {
                 let form = new FormData();
                 form.append("idCalendario", datos.idCalendario[i]);
 
-                fetch("https://calenlab.herokuapp.com/EditarCalendario", {
+                fetch("http://localhost:8080/EditarCalendario", {
                     method: "POST",
                     body: form
                 }).then(response => {
@@ -123,7 +123,7 @@ const mostrarCalendarios = () => {
                     console.table(respuesta);
 
                     if (respuesta.status == 200) {
-                        window.location.href = "https://calenlab.herokuapp.com/public/views/editarCalendario.html";
+                        window.location.href = "http://localhost:8080/public/views/editarCalendario.html";
                     }
                 });
             }

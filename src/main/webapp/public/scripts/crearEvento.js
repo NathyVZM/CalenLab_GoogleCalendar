@@ -17,6 +17,8 @@ const crearEvento = () => {
     }).then(data => {
         console.table(data);
 
+        let fecha = new Date(`${data.fecha}T${data.hora}`);
+
         let div = document.getElementById("contenedor-eventos");
 
         let evento = document.createElement("div");

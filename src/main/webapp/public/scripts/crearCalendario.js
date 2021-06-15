@@ -10,7 +10,7 @@ const crearCalendario = () => {
         console.log(value);
     }
 
-    fetch("https://calenlab.herokuapp.com/CrearCalendario", {
+    fetch("http://localhost:8080/CrearCalendario", {
         method: "POST",
         body: formulario
     }).then(response => {
@@ -45,7 +45,7 @@ const crearCalendario = () => {
                 console.log(value);
             }
 
-            fetch("https://calenlab.herokuapp.com/EliminarCalendario", {
+            fetch("http://localhost:8080/EliminarCalendario", {
                 method: "DELETE",
                 body: form
             }).then(response => {
@@ -67,7 +67,7 @@ const crearCalendario = () => {
             let form = new FormData();
             form.append("idCalendario", datos.idCalendario);
 
-            fetch("https://calenlab.herokuapp.com/EditarCalendario", {
+            fetch("http://localhost:8080/EditarCalendario", {
                 method: "POST",
                 body: form
             }).then(response => {
@@ -76,7 +76,7 @@ const crearCalendario = () => {
                 console.table(respuesta);
 
                 if(respuesta.status == 200) {
-                    window.location.href = "https://calenlab.herokuapp.com/public/views/editarCalendario.html";
+                    window.location.href = "http://localhost:8080/public/views/editarCalendario.html";
                 }
             });
         }
