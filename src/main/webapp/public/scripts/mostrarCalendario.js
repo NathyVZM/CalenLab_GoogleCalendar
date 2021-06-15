@@ -35,9 +35,12 @@ const mostrarCalendarios = () => {
                 }).then(lista => {
                     console.table(lista);
 
-                    let contenedor_eventos = document.getElementById("contenedor-eventos");
+                    //let contenedor_eventos = document.getElementById("contenedor-eventos");
 
                     for(let j = 0; j < lista.idEvento.length; j++){
+                        let fechaDate = new Date(`${lista.fecha[j]}T${lista.hora[j]}`);
+
+                        let caja = document.getElementById(`hora-${fechaDate.getHours()}-dia-${fechaDate.getDate()}`);
                         let evento = document.createElement("div");
                         evento.name = "evento";
                         evento.id = lista.idEvento[j];
@@ -69,8 +72,9 @@ const mostrarCalendarios = () => {
                         titulo.id = `titulo-${lista.idEvento[j]}`;
                         titulo.innerText = lista.titulo[j];
 
+                        //caja.appendChild(titulo);
                         evento.appendChild(titulo);
-                        contenedor_eventos.appendChild(evento);
+                        caja.appendChild(evento);
                     }
                 })
             };

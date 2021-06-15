@@ -18,8 +18,14 @@ const crearEvento = () => {
         console.table(data);
 
         let fecha = new Date(`${data.fecha}T${data.hora}`);
+        console.log(data.fecha);
+        console.log(data.hora);
+        console.log(fecha.getDate());
+        console.log(fecha.getHours());
+        
+        let caja = document.getElementById(`hora-${fecha.getHours()}-dia-${fecha.getDate()}`);
 
-        let div = document.getElementById("contenedor-eventos");
+        //let div = document.getElementById("contenedor-eventos");
 
         let evento = document.createElement("div");
         evento.name = "evento";
@@ -29,8 +35,9 @@ const crearEvento = () => {
         titulo.id = `titulo-${data.idEvento}`;
         titulo.innerText = data.titulo;
 
-        evento.appendChild(titulo);
-        div.appendChild(evento);
+        //evento.appendChild(titulo);
+        //div.appendChild(evento);
+        caja.appendChild(titulo);
     })
 }
 
