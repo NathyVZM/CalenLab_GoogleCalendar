@@ -14,7 +14,7 @@ header {
     justify-content: space-around;
     align-items: center;
     flex-flow: row wrap;
-    background: #EB3B49 url("../assets/images/calendarPatternDark30.png");
+    background: #EB3B49 url("../assets/images/calendarPatternDark20.png");
     padding: 1%;
 }
 
@@ -64,11 +64,21 @@ header div:last-child div:first-child img{
     margin-left: 1%;
 }
 
-header div:last-child div:last-child {
-    flex: 0.3;
+header div:last-child a{
+    width: 3%;
+    margin: 0.5%;
 }
 
-header div:last-child div:last-child img {
+header div:last-child span{
+    width: 3%;
+    margin: 0.5%;
+}
+
+header div:last-child span img {
+    width: 100%;
+}
+
+header div:last-child a img{
     width: 100%;
 }
 
@@ -113,7 +123,7 @@ main {
 #botones-crear button {
     display: block;
     padding: 4%;
-    margin: 1%;
+    margin: 4%;
     background-color: #EB3B49;
     color: white;
     border: none;
@@ -137,7 +147,7 @@ main {
 }
 
 #contenedor-calendarios img {
-    width: 7%;
+    width: 9%;
 }
 
 #cajaFormularioCalendario, #cajaFormularioEvento{
@@ -256,10 +266,7 @@ main {
 
 #contenedor-eventos > div:last-child div span {
     float: left;
-}
-
-#contenedor-eventos > div:last-child div img {
-    width: 90%;
+    margin-right: 5%;
 }
 
 @font-face {

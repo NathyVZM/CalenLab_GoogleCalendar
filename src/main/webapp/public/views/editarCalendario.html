@@ -6,15 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CalenLab - Editar Calendario</title>
     <link rel="icon" href="../assets/icons/calenlabTitleLogo.svg" type="image/svg+xml" sizes="16x16">
+    <link rel="stylesheet" href="../styles/editar.css">
 </head>
 <body>
-    <form action="" id="formulario-editar">
+    <header>
+        <div>
+            <a href="../views/principal.html"><img src="../assets/icons/arrowLeftWhite.svg" alt="">Editar Calendario</a>
+        </div>
+        <div>
+            <img src="../assets/icons/userIcon.svg" alt="">
+            <h2 id="nomUsuario">Nombre de Usuario</h2>
+        </div>
+    </header>
+    <main>
+        <form action="" id="formulario-editar">
+            <label for="titulo">
+                <img src="../assets/icons/editPencil.svg" alt="">
+                Nombre del Calendario
+            </label>
+            <input type="text" placeholder="Nombre del Calendario" name="titulo">
+
+            <label for="descripcion">
+                <img src="../assets/icons/editPencil.svg" alt="">
+                Descripcion
+            </label>
+            <!--<input type="" placeholder="Apellido" name="lastName" id="lastName">-->
+            <textarea name="descripcion" id="descripcion" cols="100" rows="10" placeholder="Descripcion del Calendario..."></textarea>
+
+            <label for="color">
+                <img src="../assets/icons/userIconPink.svg" alt="">
+                Color
+            </label>
+            <input type="color" placeholder="Color" name="color" id="color">
+    
+            <button id="boton-editar" type="button" class="boton">Editar Calendario</button>
+        </form>
+        <!--<div id="cajaEliminar">
+            <div>
+                <img src="../assets/icons/deleteIcon.svg" alt="">
+                <h2>Eliminar Cuenta</h2>
+            </div>
+            <div>
+                <button type="button" id="eliminar" class="boton">Eliminar Calendario</button>
+            </div>
+        </div>-->
+    </main>
+    <!--<form action="" id="formulario-editar">
         <input type="text" placeholder="titulo" name="titulo">
         <input type="text" placeholder="descripcion" name="descripcion">
         <input type="text" placeholder="color" name="color">
 
         <button id="boton-editar" type="button">Editar</button>
-    </form>
+    </form>-->
 
     <script src="../scripts/editarCalendario.js"></script>
 </body>

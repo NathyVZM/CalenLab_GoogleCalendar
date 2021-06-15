@@ -1,0 +1,178 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+    background: #EB3B49 url("../assets/images/calendarPatternDark20.png");
+    padding: 1%;
+}
+
+header div {
+    flex: 1;
+}
+
+header div:first-child img {
+    float: left;
+    width: 5%;
+}
+
+header div:first-child a {
+    background-color: white;
+    padding: 1.5%;
+    border-radius: 10px;
+    color: #EB3B49;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+header div:last-child {
+    text-align: right;
+}
+
+header div:last-child h2 {
+    color: white;
+    margin-top: 1%;
+}
+
+header div:last-child img {
+    float: right;
+    width: 7%;
+    margin-left: 2%;
+}
+
+form {
+    padding-bottom: 4%;
+    margin: 5%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-flow: column wrap;
+    border-bottom: 1px solid #EB3B49;
+}
+
+form input {
+    font-family: montserrat_alternates;
+    width: 50%;
+    padding: 1%;
+    margin: 2% 3% 7% 3%;
+    border: none;
+    border-bottom: 2px solid #EB3B49;
+    border-radius: 5px 5px 4px 4px;
+    outline: none;
+    transition: background-color 0.5s ease-in-out 0s, border-bottom 0.5s ease-in-out 0s;
+    font-size: 1em;
+}
+
+form button {
+    align-self: flex-end;
+}
+
+form label {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+form label img {
+    float: left;
+    width: 7%;
+    margin-right: 4%;
+}
+
+form input:hover {
+    background-color: #ffeeef;
+}
+
+form input:focus {
+    border-bottom: 2px solid #83252d;
+}
+
+form textarea {
+    padding: 1%;
+    margin: 2% 3% 7% 3%;
+    border: 1px solid #EB3B49;
+    outline: none;
+}
+
+form input[type="color"]{
+    width: 5%;
+    border: 2px solid #EB3B49;
+    cursor: pointer;
+}
+
+#cajaEliminar {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-flow: column wrap;
+    margin: 5%;
+}
+
+#cajaEliminar > div:first-child {
+    flex: 1;
+    margin-bottom: 1%;
+}
+
+#cajaEliminar > div:last-child {
+    flex: 1;
+    margin-top: 1%;
+}
+
+#cajaEliminar button {
+    padding: 12%;
+}
+
+#cajaEliminar img {
+    float: left;
+    width: 10%;
+    margin-right: 7%;
+}
+
+.boton {
+    font-family: montserrat_alternates;
+    color: white;
+    background-color: #EB3B49;
+    padding: 1%;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "comfortaa";
+    src: url("../assets/fonts/Comfortaa/Comfortaa-Bold.ttf");
+}
+
+@font-face {
+    font-family: "rubik";
+    src: url("../assets/fonts/Rubik/Rubik-Medium.ttf");
+}
+
+@font-face {
+    font-family: "montserrat_alternates";
+    src: url("../assets/fonts/Montserrat_Alternates/MontserratAlternates-Regular.ttf");
+}
+
+h1 {
+    font-family: comfortaa;
+}
+
+h2 {
+    font-family: rubik;
+}
+
+p, address, small, li, label, table{
+    font-family: montserrat_alternates;
+}
+
+a {
+    font-family: montserrat_alternates;
+    text-decoration: none;
+}

@@ -10,7 +10,7 @@ html, body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #EB3B49 url("../assets/images/calendarPatternDark30.png");
+    background: #EB3B49 url("../assets/images/calendarPatternDark20.png");
     background-size: cover;
 }
 

@@ -50,29 +50,6 @@ const mostrarCalendarios = () => {
                         evento.name = "evento";
                         evento.id = lista.idEvento[j];
                         evento.style.backgroundColor = datos.color[i];
-                        /*evento.onclick = () => {
-                            let evento_div = document.createElement("div");
-                            evento_div.id = `evento-${lista.idEvento[j]}`;
-
-                            let titulo_evento = document.createElement("h3");
-                            titulo_evento.innerText = lista.titulo[j];
-
-                            let fecha = document.createElement("p");
-                            fecha.innerText = lista.fecha[j];
-
-                            let hora = document.createElement("p");
-                            hora.innerText = lista.hora[j];
-
-                            let descripcion = document.createElement("p");
-                            descripcion.innerText = lista.descripcion[j];
-
-                            evento_div.appendChild(titulo_evento)
-                            evento_div.appendChild(fecha);
-                            evento_div.appendChild(hora)
-                            evento_div.appendChild(descripcion)
-
-                            evento.appendChild(evento_div);
-                        }*/
 
                         let titulo = document.createElement("p");
                         titulo.id = `titulo-${lista.idEvento[j]}`;
@@ -81,7 +58,8 @@ const mostrarCalendarios = () => {
                         let spanEvento = document.createElement("span");
                         let imgEvento = document.createElement("img");
 
-                        imgEvento.src = "../assets/icons/close2.svg";
+                        imgEvento.src = "../assets/icons/eventIcon.svg";
+                        imgEvento.width = "20";
                         spanEvento.appendChild(imgEvento);
 
                         evento.appendChild(spanEvento);
@@ -95,8 +73,8 @@ const mostrarCalendarios = () => {
             label.innerText = datos.titulo[i];
             label.htmlFor = datos.idCalendario[i];
 
-            imgBorrar.src = "../assets/icons/close2.svg";
-            imgEditar.src = "../assets/icons/close2.svg";
+            imgBorrar.src = "../assets/icons/deleteIcon.svg";
+            imgEditar.src = ".../assets/icons/editIcon.svg";
 
             boton.appendChild(imgBorrar);
             boton.id = `eliminar-${datos.idCalendario[i]}`;
