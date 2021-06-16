@@ -9,7 +9,7 @@ const crearEvento = () => {
         console.log(value);
     }
 
-    fetch("http://localhost:8080/CrearEvento", {
+    fetch("https://calenlab.herokuapp.com/CrearEvento", {
         method: "POST",
         body: form
     }).then(response => {

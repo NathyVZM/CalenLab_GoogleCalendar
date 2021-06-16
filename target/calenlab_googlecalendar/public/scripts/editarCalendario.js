@@ -4,7 +4,7 @@ let formulario_editar = document.getElementById("formulario-editar");
 let boton_editar = document.getElementById("boton-editar");
 
 const mostrarIDCalendario = () => {
-    fetch("http://localhost:8080/EditarCalendario", {
+    fetch("https://calenlab.herokuapp.com/EditarCalendario", {
         method: "GET"
     }).then(response => {
         return response.json();
@@ -18,7 +18,7 @@ const mostrarIDCalendario = () => {
                 console.log(value);
             }
 
-            fetch("http://localhost:8080/EditarCalendario", {
+            fetch("https://calenlab.herokuapp.com/EditarCalendario", {
                 method: "PUT",
                 body: formulario
             }).then(response => {
@@ -26,7 +26,7 @@ const mostrarIDCalendario = () => {
             }).then(repuesta => {
                 console.table(repuesta);
                 if(repuesta.status == 200){
-                    window.location.href = "http://localhost:8080/public/views/principal.html";
+                    window.location.href = "https://calenlab.herokuapp.com/public/views/principal.html";
                 }
             })
         }
