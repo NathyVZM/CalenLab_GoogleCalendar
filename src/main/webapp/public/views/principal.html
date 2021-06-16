@@ -59,32 +59,79 @@
             </div>
 
             <div id="cajaFormularioCalendario">
+                <h2>Crear Calendario</h2>
+                <img src="../assets/icons/close2.svg" alt="" id="cerrar" class="cerrar">
                 <form action="" id="formulario-calendario">
-                    <input type="text" placeholder="titulo" name="titulo">
-                    <input type="text" placeholder="descripcion" name="descripcion">
-                    <input type="color" placeholder="color" name="color">
+                    <label for="titulo">
+                        <img src="../assets/icons/editPencil.svg" alt="">
+                        Titulo del Calendario
+                    </label>
+                    <input type="text" placeholder="titulo" name="titulo" id="titulo">
 
-                    <button type="button" id="boton-calendario">Enviar</button>
+                    <label for="descripcion">
+                        <img src="../assets/icons/textIcon.svg" alt="">
+                        Descripcion
+                    </label>
+                    <input type="text" placeholder="descripcion" name="descripcion" id="descripcion">
+
+                    <label for="color">
+                        <img src="../assets/icons/colorPicker.svg" alt="">
+                        Color
+                    </label>
+                    <input type="color" placeholder="color" name="color" id="color">
+
+                    <button type="button" id="boton-calendario" class="boton">Enviar</button>
                 </form>
             </div>
 
             <div id="cajaFormularioEvento">
+                <h2>Crear Evento</h2>
+                <img src="../assets/icons/close2.svg" alt="" id="cerrar" class="cerrar">
                 <form action="" id="formulario-evento">
+                    <label for="titulo">
+                        <img src="../assets/icons/editPencil.svg" alt="">
+                        Titulo del Evento
+                    </label>
                     <input type="text" placeholder="titulo del evento" name="titulo">
-                    <input type="date" placeholder="fecha" name="fecha">
-                    <input type="time" placeholder="hora" name="hora">
-                    <select name="calendario-evento" id="seleccion-calendario"></select>
-                    <input type="text" placeholder="Aniadir una descripcion" name="descripcion">
-                    <input type="text" placeholder="Aniadir una imagen" name="imagen">
 
-                    <button type="button" id="boton-evento">Crear Evento</button>
+                    <label for="fecha">
+                        <img src="../assets/icons/editPencil.svg" alt="">
+                        Fecha
+                    </label>
+                    <input type="date" placeholder="fecha" name="fecha">
+
+                    <label for="hora">
+                        <img src="../assets/icons/editPencil.svg" alt="">
+                        Hora
+                    </label>
+                    <input type="time" placeholder="hora" name="hora">
+
+                    <label for="selectCalendario">
+                        <img src="../assets/icons/editPencil.svg" alt="">
+                        Seleccione un Calendario
+                    </label>
+                    <select name="calendario-evento" id="seleccion-calendario"></select>
+
+                    <label for="descripcion">
+                        <img src="../assets/icons/editPencil.svg" alt="">
+                        Descripcion
+                    </label>
+                    <input type="text" placeholder="Aniadir una descripcion" name="descripcion">
+
+                    <label for="imagen">
+                        <img src="../assets/icons/editPencil.svg" alt="">
+                        Imagen
+                    </label>
+                    <input type="text" placeholder="Aniadir una imagen" name="imagen" value="null">
+
+                    <button type="button" id="boton-evento" class="boton">Crear Evento</button>
                 </form>
             </div>
         </div>
 
         <!--SEGUNDO DIV-->
         <div id="barraCentro">
-            <div>
+            <div >
                 <span id="anterior"><img src="../assets/icons/arrowLeft.svg" alt="" width="25"></span>
                 <span id="siguiente"><img src="../assets/icons/arrowRight.svg" alt="" width="25"></span>
             </div>
