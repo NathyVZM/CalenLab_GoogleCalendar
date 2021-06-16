@@ -83,18 +83,12 @@ header div:last-child a img{
     width: 100%;
 }
 
-/*main div:last-child {
-    flex: 1;
-}*/
-
 main {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-flow: row wrap;
     height: 100%;
-    /*background-color: blueviolet;
-    overflow: hidden;*/
 }
 
 #barraIzquierda {
@@ -104,7 +98,6 @@ main {
     flex-flow: column wrap;
     border-right: 1px solid #EB3B49;
     height: 110%;
-    /*margin-top: -15%;*/
     overflow: scroll;
 }
 
@@ -328,7 +321,6 @@ main {
 
 #barraCentro div:last-child div {
     flex: 10;
-    /*overflow: scroll;*/
     width: 100%;
     display: flex;
     justify-content: center;
@@ -342,7 +334,6 @@ main {
     margin-top: 1%;
     width: 100%;
     border-collapse: collapse;
-    /*background-color: blue;*/
 }
 
 #barraCentro table td {
