@@ -9,7 +9,7 @@ const enviarEdicion = () => {
         console.log(value);
     }
 
-    fetch("http://localhost:8080/EditarUsuario", {
+    fetch("https://calenlab.herokuapp.com/EditarUsuario", {
         method: "PUT",
         body: formulario
     }).then(response => {
@@ -17,7 +17,7 @@ const enviarEdicion = () => {
     }).then(datos => {
         console.table(datos);
         if(datos.status == 200){
-            window.location.href = "http://localhost:8080/public/views/principal.html";
+            window.location.href = "https://calenlab.herokuapp.com/public/views/principal.html";
         }
     })
 }

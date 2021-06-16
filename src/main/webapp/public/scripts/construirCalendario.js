@@ -33,7 +33,7 @@ function siguiente(e) {
 
     for(let i = 0; i < 24; i++){
         let filas = document.getElementById(`hora-${i}`);
-        let datos = filas.document.getElementsByTagName("td");
+        let datos = filas.getElementsByTagName("td");
 
         for(let j = 1; j < 8; j++){
             datos[j].innerHTML = "";
@@ -49,7 +49,7 @@ function anterior(e) {
 
     for(let i = 0; i < 24; i++){
         let filas = document.getElementById(`hora-${i}`);
-        let datos = filas.document.getElementsByTagName("td");
+        let datos = filas.getElementsByTagName("td");
 
         for(let j = 1; j < 8; j++){
             datos[j].innerHTML = "";

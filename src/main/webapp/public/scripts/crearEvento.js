@@ -9,7 +9,7 @@ const crearEvento = () => {
         console.log(value);
     }
 
-    fetch("http://localhost:8080/CrearEvento", {
+    fetch("https://calenlab.herokuapp.com/CrearEvento", {
         method: "POST",
         body: form
     }).then(response => {
@@ -25,18 +25,18 @@ const crearEvento = () => {
         
         let caja = document.getElementById(`hora-${fecha.getHours()}-dia-${fecha.getDate()}`);
 
-        //let div = document.getElementById("contenedor-eventos");
+        let div = document.getElementById("eventos");
 
         let evento = document.createElement("div");
         evento.name = "evento";
         evento.id = data.idEvento;
 
-        let titulo = document.createElement("h3");
+        let titulo = document.createElement("p");
         titulo.id = `titulo-${data.idEvento}`;
         titulo.innerText = data.titulo;
 
-        //evento.appendChild(titulo);
-        //div.appendChild(evento);
+        evento.appendChild(titulo);
+        div.appendChild(titulo);
         caja.appendChild(titulo);
     })
 }

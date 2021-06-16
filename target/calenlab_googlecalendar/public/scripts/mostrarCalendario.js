@@ -8,13 +8,18 @@ const mostrarCalendarios = () => {
     }).then(datos => {
         console.table(datos);
 
+        let main = document.getElementsByTagName("main")[0];
         let div = document.getElementById("contenedor-calendarios");
 
         for (let i = 0; i < datos.idCalendario.length; i++) {
+            let contenedor = document.createElement("div");
             let calendario = document.createElement("input");
             let label = document.createElement("label");
-            let boton = document.createElement("button");
-            let editar = document.createElement("button");
+            let boton = document.createElement("span");
+            let editar = document.createElement("span");
+
+            let imgBorrar = document.createElement("img");
+            let imgEditar = document.createElement("img");
 
             calendario.type = "radio";
             calendario.name = "calendario";
@@ -27,6 +32,8 @@ const mostrarCalendarios = () => {
                     console.log(value);
                 }
 
+                //let contenedor_eventos = document.getElementById("eventos");
+
                 fetch("http://localhost:8080/Eventos", {
                     method: "POST",
                     body: form
@@ -35,48 +42,33 @@ const mostrarCalendarios = () => {
                 }).then(lista => {
                     console.table(lista);
 
-                    //let contenedor_eventos = document.getElementById("contenedor-eventos");
+                    let contenedor_eventos = document.getElementById("eventos");
+                    //contenedor_eventos.innerHTML = "";
 
                     for(let j = 0; j < lista.idEvento.length; j++){
                         let fechaDate = new Date(`${lista.fecha[j]}T${lista.hora[j]}`);
 
                         let caja = document.getElementById(`hora-${fechaDate.getHours()}-dia-${fechaDate.getDate()}`);
-                        caja.innerHTML = "";
                         let evento = document.createElement("div");
                         evento.name = "evento";
                         evento.id = lista.idEvento[j];
-                        evento.onclick = () => {
-                            let evento_div = document.createElement("div");
-                            evento_div.id = `evento-${lista.idEvento[j]}`;
 
-                            let titulo_evento = document.createElement("h3");
-                            titulo_evento.innerText = lista.titulo[j];
-
-                            let fecha = document.createElement("p");
-                            fecha.innerText = lista.fecha[j];
-
-                            let hora = document.createElement("p");
-                            hora.innerText = lista.hora[j];
-
-                            let descripcion = document.createElement("p");
-                            descripcion.innerText = lista.descripcion[j];
-
-                            evento_div.appendChild(titulo_evento)
-                            evento_div.appendChild(fecha);
-                            evento_div.appendChild(hora)
-                            evento_div.appendChild(descripcion)
-
-                            evento.appendChild(evento_div);
-                        }
-
-                        let titulo = document.createElement("h3");
+                        let titulo = document.createElement("p");
                         titulo.id = `titulo-${lista.idEvento[j]}`;
                         titulo.innerText = lista.titulo[j];
 
-                        //caja.appendChild(titulo);
-                        evento.appendChild(titulo);
-                        caja.appendChild(evento);
-                        //contenedor_eventos.appendChild(evento);
+                        let spanEvento = document.createElement("span");
+                        let imgEvento = document.createElement("img");
+
+                        imgEvento.src = "../assets/icons/eventIcon.svg";
+                        imgEvento.width = "10";
+                        spanEvento.appendChild(imgEvento);
+
+                        evento.appendChild(spanEvento);
+                        evento.innerText = titulo.value;
+                        caja.appendChild(titulo);
+                        //contenedor_eventos.appendChild(spanEvento);
+                        //contenedor_eventos.appendChild(titulo);
                     }
                 })
             };
@@ -84,8 +76,12 @@ const mostrarCalendarios = () => {
             label.innerText = datos.titulo[i];
             label.htmlFor = datos.idCalendario[i];
 
-            boton.type = "button";
-            boton.innerText = "Eliminar"
+            imgBorrar.src = "../assets/icons/deleteIcon.svg";
+            //imgBorrar.width = "10%";
+            imgEditar.src = "../assets/icons/editIcon.svg";
+            //imgEditar.width = "10%"
+
+            boton.appendChild(imgBorrar);
             boton.id = `eliminar-${datos.idCalendario[i]}`;
             boton.addEventListener("click", (e) => {
                 console.log(e.target.id)
@@ -113,8 +109,8 @@ const mostrarCalendarios = () => {
 
             })
 
-            editar.type = "button";
-            editar.innerText = "Editar Calendario";
+
+            editar.appendChild(imgEditar);
             editar.id = `editar-${datos.idCalendario[i]}`;
             editar.onclick = () => {
                 let form = new FormData();
@@ -134,13 +130,15 @@ const mostrarCalendarios = () => {
                 });
             }
 
-            div.appendChild(calendario);
-            div.appendChild(label);
-            div.appendChild(boton);
-            div.appendChild(editar);
+            contenedor.appendChild(calendario);
+            contenedor.appendChild(label);
+            contenedor.appendChild(boton);
+            contenedor.appendChild(editar);
+            div.appendChild(contenedor);
         }
 
-        document.body.appendChild(div);
+        //document.body.appendChild(div);
+        //main.appendChild(div);
 
         let select = document.getElementById("seleccion-calendario");
 

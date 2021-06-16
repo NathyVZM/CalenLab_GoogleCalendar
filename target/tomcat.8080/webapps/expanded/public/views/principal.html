@@ -7,72 +7,157 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CalenLab - Pagina Principal</title>
     <link rel="icon" href="../assets/icons/calenlabTitleLogo.svg" type="image/svg+xml" sizes="16x16">
-
-    <style>
-        td, tr, th, table{
-            border: 1px solid black;
-        }
-    </style>
+    <link rel="stylesheet" href="../styles/principal.css">
 </head>
 
 <body>
-    <form action="" id="formulario-calendario">
-        <input type="text" placeholder="titulo" name="titulo">
-        <input type="text" placeholder="descripcion" name="descripcion">
-        <input type="color" placeholder="color" name="color">
+    <header>
+        <div>
+            <img src="../assets/icons/calenlabLogo.svg" alt="">
+            <h1>Calenlab</h1>
+        </div>
+        <div>
+            <div>
+                <img src="../assets/icons/userIcon.svg" alt="">
+                <h2 id="nomUsuario">Nombre de Usuario</h2>
+            </div>
+            <a href="editarUsuario.html"><img src="../assets/icons/editIconWhite.svg" alt=""></a>
+            <span id="eliminar"><img src="../assets/icons/deleteIconWhite.svg" alt=""></span>
+        </div>
+    </header>
 
-        <button type="button" id="boton-calendario">Enviar</button>
-    </form>
-    <a href="editarUsuario.html">Editar Usuario</a>
-    <button id="eliminar">Eliminar Usuario</button>
+    <main>
+        <!--PRIMER DIV-->
+        <div id="barraIzquierda">
+            <div id="botones-crear">
+                <button type="button" id="crearCalendario">Crear Calendario</button>
+                <button type="button" id="crearEvento">Crear Evento</button>
+            </div>
 
-    <div id="contenedor-calendarios"></div>
+            <div id="contenedor-calendarios">
+                <h2>Mis Calendarios</h2>
+            </div>
 
-    <form action="" id="formulario-evento">
-        <input type="text" placeholder="titulo del evento" name="titulo">
-        <input type="date" placeholder="fecha" name="fecha">
-        <input type="time" placeholder="hora" name="hora">
-        <select name="calendario-evento" id="seleccion-calendario"></select>
-        <input type="text" placeholder="Aniadir una descripcion" name="descripcion">
-        <input type="text" placeholder="Aniadir una imagen" name="imagen">
+            <div id="cajaFormularioCalendario">
+                <h2>Crear Calendario</h2>
+                <img src="../assets/icons/close2.svg" alt="" id="cerrar" class="cerrar">
+                <form action="" id="formulario-calendario">
+                    <label for="titulo">
+                        <img src="../assets/icons/editPencil.svg" alt="">
+                        Titulo del Calendario
+                    </label>
+                    <input type="text" placeholder="titulo" name="titulo" id="titulo">
 
-        <button type="button" id="boton-evento">Crear Evento</button>
-    </form>
+                    <label for="descripcion">
+                        <img src="../assets/icons/textIcon.svg" alt="">
+                        Descripcion
+                    </label>
+                    <input type="text" placeholder="descripcion" name="descripcion" id="descripcion">
 
-    <div id="contenedor-eventos"></div>
+                    <label for="color">
+                        <img src="../assets/icons/colorPicker.svg" alt="">
+                        Color
+                    </label>
+                    <input type="color" placeholder="color" name="color" id="color">
 
-    <div>
-        <h3 id="mes-anio"></h3>
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>DOM</th>
-                    <th>LUN</th>
-                    <th>MAR</th>
-                    <th>MIE</th>
-                    <th>JUE</th>
-                    <th>VIE</th>
-                    <th>SAB</th>
-                </tr>
-                <tr id="dias">
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
+                    <button type="button" id="boton-calendario" class="boton">Enviar</button>
+                </form>
+            </div>
 
-            <tbody id="cuerpo-calendario"></tbody>
-        </table>
+            <div id="cajaFormularioEvento">
+                <h2>Crear Evento</h2>
+                <img src="../assets/icons/close2.svg" alt="" id="cerrar" class="cerrar">
+                <form action="" id="formulario-evento">
+                    <label for="titulo">
+                        <img src="../assets/icons/editPencil.svg" alt="">
+                        Titulo del Evento
+                    </label>
+                    <input type="text" placeholder="titulo del evento" name="titulo">
 
-        <button id="anterior">Anterior</button>
-        <button id="siguiente">Siguiente</button>
-    </div>
+                    <label for="fecha">
+                        <img src="../assets/icons/editPencil.svg" alt="">
+                        Fecha
+                    </label>
+                    <input type="date" placeholder="fecha" name="fecha">
+
+                    <label for="hora">
+                        <img src="../assets/icons/editPencil.svg" alt="">
+                        Hora
+                    </label>
+                    <input type="time" placeholder="hora" name="hora">
+
+                    <label for="selectCalendario">
+                        <img src="../assets/icons/editPencil.svg" alt="">
+                        Seleccione un Calendario
+                    </label>
+                    <select name="calendario-evento" id="seleccion-calendario"></select>
+
+                    <label for="descripcion">
+                        <img src="../assets/icons/editPencil.svg" alt="">
+                        Descripcion
+                    </label>
+                    <input type="text" placeholder="Aniadir una descripcion" name="descripcion">
+
+                    <label for="imagen">
+                        <img src="../assets/icons/editPencil.svg" alt="">
+                        Imagen
+                    </label>
+                    <input type="text" placeholder="Aniadir una imagen" name="imagen" value="null">
+
+                    <button type="button" id="boton-evento" class="boton">Crear Evento</button>
+                </form>
+            </div>
+        </div>
+
+        <!--SEGUNDO DIV-->
+        <div id="barraCentro">
+            <div >
+                <span id="anterior"><img src="../assets/icons/arrowLeft.svg" alt="" width="25"></span>
+                <span id="siguiente"><img src="../assets/icons/arrowRight.svg" alt="" width="25"></span>
+            </div>
+            <div>
+                <h2 id="mes-anio"></h2>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>DOM</th>
+                                <th>LUN</th>
+                                <th>MAR</th>
+                                <th>MIE</th>
+                                <th>JUE</th>
+                                <th>VIE</th>
+                                <th>SAB</th>
+                            </tr>
+                            <tr id="dias">
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpo-calendario">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!--TERCER DIV-->
+        <div id="contenedor-eventos">
+            <div>
+                <h2>Eventos</h2>
+            </div>
+            <div id="eventos">
+                </div>
+            </div>
+        </div>
+    </main>
 
     <script src="../scripts/mostrarCalendario.js"></script>
     <script src="../scripts/crearCalendario.js"></script>

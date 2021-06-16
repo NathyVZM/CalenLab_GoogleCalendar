@@ -4,7 +4,7 @@ let eliminar = document.getElementById("eliminar");
 
 const eliminarUsuario = () => {
     
-    fetch("http://localhost:8080/EliminarUsuario", {
+    fetch("https://calenlab.herokuapp.com/EliminarUsuario", {
         method: "DELETE"
     }).then(response => {
         return response.json();
@@ -16,7 +16,7 @@ const eliminarUsuario = () => {
 
 const redireccionar = (status) => {
     if(status == 200) {
-        window.location.href = "http://localhost:8080/public/views/eliminarRedireccion.html";
+        window.location.href = "https://calenlab.herokuapp.com/public/views/eliminarRedireccion.html";
     }
 }
 

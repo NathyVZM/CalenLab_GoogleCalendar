@@ -38,7 +38,7 @@ const crearCalendario = () => {
         console.log(value);
     }
 
-    fetch("http://localhost:8080/CrearCalendario", {
+    fetch("https://calenlab.herokuapp.com/CrearCalendario", {
         method: "POST",
         body: formulario
     }).then(response => {
@@ -54,7 +54,9 @@ const crearCalendario = () => {
         let editar = document.createElement("span");
 
         let imgBorrar = document.createElement("img");
+        imgBorrar.src = "../assets/icons/deleteIcon.svg";
         let imgEditar = document.createElement("img");
+        imgEditar.src = "../assets/icons/editIcon.svg";
 
         calendario.type = "radio";
         calendario.name = "calendario";
@@ -67,7 +69,7 @@ const crearCalendario = () => {
                 console.log(value);
             }
 
-            fetch("http://localhost:8080/Eventos", {
+            fetch("https://calenlab.herokuapp.com/Eventos", {
                 method: "POST",
                 body: form
             }).then(response => {
@@ -121,7 +123,7 @@ const crearCalendario = () => {
                 console.log(value);
             }
 
-            fetch("http://localhost:8080/EliminarCalendario", {
+            fetch("https://calenlab.herokuapp.com/EliminarCalendario", {
                 method: "DELETE",
                 body: form
             }).then(response => {
@@ -142,7 +144,7 @@ const crearCalendario = () => {
             let form = new FormData();
             form.append("idCalendario", datos.idCalendario);
 
-            fetch("http://localhost:8080/EditarCalendario", {
+            fetch("https://calenlab.herokuapp.com/EditarCalendario", {
                 method: "POST",
                 body: form
             }).then(response => {
@@ -151,7 +153,7 @@ const crearCalendario = () => {
                 console.table(respuesta);
 
                 if (respuesta.status == 200) {
-                    window.location.href = "http://localhost:8080/public/views/editarCalendario.html";
+                    window.location.href = "https://calenlab.herokuapp.com/public/views/editarCalendario.html";
                 }
             });
         }
