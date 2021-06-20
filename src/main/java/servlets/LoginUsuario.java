@@ -29,4 +29,12 @@ public class LoginUsuario extends HttpServlet{
 		PrintWriter out = resp.getWriter();
 		out.println(LoginController.login(req));
     }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // TODO Auto-generated method stub
+        resp.setContentType("application/json");
+		PrintWriter out = resp.getWriter();
+		out.println(LoginController.logOut(req));
+    }
 }

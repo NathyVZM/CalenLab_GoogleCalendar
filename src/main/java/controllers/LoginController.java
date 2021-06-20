@@ -24,5 +24,17 @@ public class LoginController {
 
         return null;
     }
+
+    public static String logOut(HttpServletRequest request){
+        try {
+            HttpSession session = request.getSession();
+            session.invalidate();
+
+            return "{\"message\": \"Log Out exitoso\", \"status\": " + 200 + "}";
+        } catch (Exception e) {
+            //TODO: handle exception
+            return "{\"message\": \"Error al cerrar sesion\", \"status\": " + 500 + "}";
+        }
+    }
     
 }
