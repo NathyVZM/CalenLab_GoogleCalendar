@@ -15,6 +15,11 @@ public class EditUserController {
     private static PropertiesReader propsR = PropertiesReader.getInstances();
     private static DB db = DB.getInstances();
 
+    /*public static String retornarUsuario(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        String nomUsuario = (String) session.getAttribute("usuario");
+    }*/
+
     public static String editarUsuario(HttpServletRequest request) {
         try {
             String hashPassword = Hashing.getHash(request.getParameter("password"));
