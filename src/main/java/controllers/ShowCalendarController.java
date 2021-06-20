@@ -21,7 +21,7 @@ public class ShowCalendarController {
             Object[] titulos = db.dbSelectCalendar(propsR.getValue("selectTitleCalendars"), nomUsuario);
             
             StringBuilder retorno = new StringBuilder();
-            retorno.append("{\"message\": \"Calendarios obtenidos\", \"status\":" + 200 + ", \"idCalendario\": [");
+            retorno.append("{\"message\": \"Calendarios obtenidos\", \"status\":" + 200 + ", \"nomUsuario\": \"" + nomUsuario + "\", \"idCalendario\": [");
             for(int i = 0; i < idcalendarios.length; i++){
                 retorno.append("\"" + idcalendarios[i].toString() + "\",");
             }
