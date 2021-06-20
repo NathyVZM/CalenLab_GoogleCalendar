@@ -55,6 +55,10 @@ const mostrarCalendarios = () => {
                         titulo.id = `titulo-${lista.idEvento[j]}`;
                         titulo.innerText = lista.titulo[j];
 
+                        let tituloEvento = document.createElement("p");
+                        tituloEvento.id = `tituloEvento-${lista.idEvento[j]}`;
+                        tituloEvento.innerText = lista.titulo[j];
+
                         let spanEvento = document.createElement("span");
                         let imgEvento = document.createElement("img");
 
@@ -64,7 +68,7 @@ const mostrarCalendarios = () => {
 
                         evento.appendChild(spanEvento);
                         /*evento.innerText = titulo.value;*/
-                        evento.appendChild(titulo);
+                        evento.appendChild(tituloEvento);
                         caja.appendChild(titulo);
                         contenedor_eventos.appendChild(evento);
                     }
