@@ -374,8 +374,15 @@ main {
     padding: 6%;
 }
 
-#contenedor-eventos > div:last-child div span {
+/*#eventos span {
+    background-color: aqua;
     float: left;
+    margin-right: 5%;
+}*/
+
+#eventos img {
+    float: left;
+    width: 8%;
     margin-right: 5%;
 }
 
