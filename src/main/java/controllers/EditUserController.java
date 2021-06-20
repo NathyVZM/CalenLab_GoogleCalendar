@@ -15,10 +15,17 @@ public class EditUserController {
     private static PropertiesReader propsR = PropertiesReader.getInstances();
     private static DB db = DB.getInstances();
 
-    /*public static String retornarUsuario(HttpServletRequest request){
-        HttpSession session = request.getSession();
-        String nomUsuario = (String) session.getAttribute("usuario");
-    }*/
+    public static String retornarUsuario(HttpServletRequest request){
+        try {
+            HttpSession session = request.getSession();
+            String nomUsuario = (String) session.getAttribute("usuario");
+
+            return "{\"message\": \"Usuario retornado\", \"status\": " + 200 + "\"nomUsuario\": \"" + nomUsuario + "\"}";
+        } catch (Exception e) {
+            //TODO: handle exception
+            return null;
+        }
+    }
 
     public static String editarUsuario(HttpServletRequest request) {
         try {

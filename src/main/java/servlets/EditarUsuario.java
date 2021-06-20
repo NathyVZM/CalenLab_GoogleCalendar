@@ -26,7 +26,7 @@ public class EditarUsuario extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("application/json");
 		PrintWriter out = resp.getWriter();
-		out.println(EditUserController.editarUsuario(req));
+		out.println(EditUserController.retornarUsuario(req));
     }
 
     @Override
