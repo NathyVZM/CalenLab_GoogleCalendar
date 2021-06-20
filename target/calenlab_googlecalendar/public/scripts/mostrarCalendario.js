@@ -42,6 +42,7 @@ const mostrarCalendarios = () => {
                     console.table(lista);
 
                     let contenedor_eventos = document.getElementById("eventos");
+                    contenedor_eventos.innerHTML = "";
 
                     for(let j = 0; j < lista.idEvento.length; j++){
                         let fechaDate = new Date(`${lista.fecha[j]}T${lista.hora[j]}`);
@@ -59,16 +60,24 @@ const mostrarCalendarios = () => {
                         tituloEvento.id = `tituloEvento-${lista.idEvento[j]}`;
                         tituloEvento.innerText = lista.titulo[j];
 
-                        //let spanEvento = document.createElement("span");
                         let imgEvento = document.createElement("img");
-
                         imgEvento.src = "../assets/icons/eventIcon.svg";
-                        //imgEvento.width = "10";
-                        //spanEvento.appendChild(imgEvento);
+
+                        let imgEventoEditar = document.createElement("img");
+                        imgEventoEditar.width = "10";
+                        imgEventoEditar.src = "../assets/icons/editIcon.svg";
+
+                        let imgEventoBorrar = document.createElement("img");
+                        imgEventoBorrar.width = "10";
+                        imgEventoBorrar.src = "../assets/icons/deleteIcon.svg";
 
                         evento.appendChild(imgEvento);
                         evento.appendChild(tituloEvento);
+
                         caja.appendChild(titulo);
+                        caja.appendChild(imgEventoEditar);
+                        caja.appendChild(imgEventoBorrar);
+                        
                         contenedor_eventos.appendChild(evento);
                     }
                 })
