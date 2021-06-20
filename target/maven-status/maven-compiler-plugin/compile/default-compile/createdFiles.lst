@@ -1,7 +1,6 @@
 controllers\RegisterController.class
 servlets\Calendarios.class
 helpers\Auth.class
-helpers\herokuProperties.properties
 servlets\CrearCalendario.class
 servlets\LoginUsuario.class
 servlets\CrearEvento.class
@@ -9,7 +8,6 @@ controllers\CreateEventController.class
 controllers\LoginController.class
 servlets\EditarCalendario.class
 servlets\EliminarCalendario.class
-helpers\dbProperties.properties
 controllers\EditCalendarController.class
 servlets\RegistroUsuario.class
 helpers\Hashing.class

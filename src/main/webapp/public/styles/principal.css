@@ -351,6 +351,10 @@ main {
     padding: 2.5%;
 }
 
+#barraCentro table th img {
+    float: right;
+}
+
 #contenedor-eventos {
     flex: 1;
     display: flex;

@@ -35,12 +35,16 @@ const crearEvento = () => {
         titulo.id = `titulo-${data.idEvento}`;
         titulo.innerText = data.titulo;
 
+        let tituloEvento =  document.createElement("p");
+        tituloEvento.id = `tituloEvento-${data.idEvento}`;
+        tituloEvento.innerText = data.titulo;
+
         let imgEvento = document.createElement("img");
         imgEvento.src = "../assets/icons/eventIcon.svg";
 
         evento.appendChild(imgEvento);
-        evento.appendChild(titulo);
-        
+        evento.appendChild(tituloEvento);
+
         div.appendChild(evento);
         caja.appendChild(titulo);
     })
