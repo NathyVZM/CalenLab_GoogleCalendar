@@ -41,24 +41,24 @@ const mostrarCalendarios = () => {
                 }).then(lista => {
                     console.table(lista);
 
-                    let contenedor_eventos = document.getElementById("eventos");
-                    contenedor_eventos.innerHTML = "";
+                    //let contenedor_eventos = document.getElementById("eventos");
+                    //contenedor_eventos.innerHTML = "";
 
                     for(let j = 0; j < lista.idEvento.length; j++){
                         let fechaDate = new Date(`${lista.fecha[j]}T${lista.hora[j]}`);
 
                         let caja = document.getElementById(`hora-${fechaDate.getHours()}-dia-${fechaDate.getDate()}`);
-                        let evento = document.createElement("div");
-                        evento.name = "evento";
-                        evento.id = lista.idEvento[j];
+                        //let evento = document.createElement("div");
+                        //evento.name = "evento";
+                        //evento.id = lista.idEvento[j];
 
                         let titulo = document.createElement("p");
                         titulo.id = `titulo-${lista.idEvento[j]}`;
                         titulo.innerText = lista.titulo[j];
 
-                        let tituloEvento = document.createElement("p");
-                        tituloEvento.id = `tituloEvento-${lista.idEvento[j]}`;
-                        tituloEvento.innerText = lista.titulo[j];
+                        //let tituloEvento = document.createElement("p");
+                        //tituloEvento.id = `tituloEvento-${lista.idEvento[j]}`;
+                        //tituloEvento.innerText = lista.titulo[j];
 
                         let imgEvento = document.createElement("img");
                         imgEvento.src = "../assets/icons/eventIcon.svg";
@@ -71,14 +71,14 @@ const mostrarCalendarios = () => {
                         imgEventoBorrar.width = "10";
                         imgEventoBorrar.src = "../assets/icons/deleteIcon.svg";
 
-                        evento.appendChild(imgEvento);
-                        evento.appendChild(tituloEvento);
+                        //evento.appendChild(imgEvento);
+                        //evento.appendChild(tituloEvento);
 
                         caja.appendChild(titulo);
                         caja.appendChild(imgEventoEditar);
                         caja.appendChild(imgEventoBorrar);
-                        
-                        contenedor_eventos.appendChild(evento);
+
+                        //contenedor_eventos.appendChild(evento);
                     }
                 })
             };
