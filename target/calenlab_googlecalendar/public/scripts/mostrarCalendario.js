@@ -7,8 +7,9 @@ const mostrarCalendarios = () => {
         return response.json();
     }).then(datos => {
         console.table(datos);
-
-        let main = document.getElementsByTagName("main")[0];
+        let nomUsuario =  document.getElementById("nomUsuario");
+        nomUsuario.innerHTML = datos.nomUsuario;
+        
         let div = document.getElementById("contenedor-calendarios");
 
         for (let i = 0; i < datos.idCalendario.length; i++) {

@@ -3,6 +3,19 @@
 let formulario_editar = document.getElementById("formulario-editar");
 let boton_editar = document.getElementById("boton-editar");
 
+const recibirNomUsuario = () => {
+    fetch("https://calenlab.herokuapp.com/EditarUsuario", {
+        method: "GET"
+    }).then (response => {
+        return response.json();
+    }).then (datoUsuario => {
+        console.log(datoUsuario);
+        
+        let nomUsuario = document.getElementById("nomUsuario");
+        nomUsuario.innerHTML = datoUsuario.nomUsuario;
+    })
+}
+
 const enviarEdicion = () => {
     let formulario = new FormData(formulario_editar);
     for(let value of formulario.values()){
@@ -23,3 +36,4 @@ const enviarEdicion = () => {
 }
 
 boton_editar.onclick = enviarEdicion;
+window.onload = recibirNomUsuario;
