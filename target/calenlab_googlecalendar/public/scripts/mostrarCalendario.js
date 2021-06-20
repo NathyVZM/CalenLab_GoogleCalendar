@@ -33,8 +33,6 @@ const mostrarCalendarios = () => {
                     console.log(value);
                 }
 
-                //let contenedor_eventos = document.getElementById("eventos");
-
                 fetch("https://calenlab.herokuapp.com/Eventos", {
                     method: "POST",
                     body: form
@@ -44,7 +42,6 @@ const mostrarCalendarios = () => {
                     console.table(lista);
 
                     let contenedor_eventos = document.getElementById("eventos");
-                    //contenedor_eventos.innerHTML = "";
 
                     for(let j = 0; j < lista.idEvento.length; j++){
                         let fechaDate = new Date(`${lista.fecha[j]}T${lista.hora[j]}`);
@@ -66,10 +63,10 @@ const mostrarCalendarios = () => {
                         spanEvento.appendChild(imgEvento);
 
                         evento.appendChild(spanEvento);
-                        evento.innerText = titulo.value;
+                        /*evento.innerText = titulo.value;*/
+                        evento.appendChild(titulo);
                         caja.appendChild(titulo);
-                        //contenedor_eventos.appendChild(spanEvento);
-                        //contenedor_eventos.appendChild(titulo);
+                        contenedor_eventos.appendChild(evento);
                     }
                 })
             };
@@ -78,9 +75,7 @@ const mostrarCalendarios = () => {
             label.htmlFor = datos.idCalendario[i];
 
             imgBorrar.src = "../assets/icons/deleteIcon.svg";
-            //imgBorrar.width = "10%";
             imgEditar.src = "../assets/icons/editIcon.svg";
-            //imgEditar.width = "10%"
 
             boton.appendChild(imgBorrar);
             boton.id = `eliminar-${datos.idCalendario[i]}`;
@@ -137,9 +132,6 @@ const mostrarCalendarios = () => {
             contenedor.appendChild(editar);
             div.appendChild(contenedor);
         }
-
-        //document.body.appendChild(div);
-        //main.appendChild(div);
 
         let select = document.getElementById("seleccion-calendario");
 
