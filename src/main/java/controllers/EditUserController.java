@@ -20,7 +20,7 @@ public class EditUserController {
             HttpSession session = request.getSession();
             String nomUsuario = (String) session.getAttribute("usuario");
 
-            return "{\"message\": \"Usuario retornado\", \"status\": " + 200 + "\"nomUsuario\": \"" + nomUsuario + "\"}";
+            return "{\"message\": \"Usuario retornado\", \"status\": " + 200 + ", \"nomUsuario\": \"" + nomUsuario + "\"}";
         } catch (Exception e) {
             //TODO: handle exception
             return null;
