@@ -1,6 +1,7 @@
 package controllers;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import helpers.DB;
 import helpers.Evento;
@@ -31,10 +32,13 @@ public class EditEventController {
     }
 
     // retornarIDEvento()
-    public static String retornarIDEvento() {
+    public static String retornarIDEvento(HttpServletRequest request) {
         try {
+            HttpSession session = request.getSession();
+            String nomUsuario = (String) session.getAttribute("usuario");
+            
             return "{\"message\": \"IdEvento Obtenido\", \"status\": " + 200 + ", \"idEvento\": \""
-                    + evento.getIdEvento() + "\"}";
+                    + evento.getIdEvento() + "\", \"nomUsuario\": \"" + nomUsuario + "\"}";
         } catch (Exception e) {
             // TODO: handle exception
             return "{\"message\": \"Error al obtener IdEvento\", \"status\": " + 500 + "}";

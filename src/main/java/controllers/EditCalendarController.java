@@ -1,6 +1,7 @@
 package controllers;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import helpers.Calendario;
 import helpers.DB;
@@ -27,10 +28,13 @@ public class EditCalendarController {
         }
     }
 
-    public static String retornarIDCalendario() {
+    public static String retornarIDCalendario(HttpServletRequest request) {
         try {
+            HttpSession session = request.getSession();
+            String nomUsuario = (String) session.getAttribute("usuario");
+
             return "{\"message\": \"IDCalendario obtenido\", \"status\": " + 200 + ", \"idCalendario\": \""
-                    + calendario.getIdCalendario() + "\"}";
+                    + calendario.getIdCalendario() + "\", \"nomUsuario\": \"" + nomUsuario + "\"}";
         } catch (Exception e) {
             // TODO: handle exception
             return "{\"message\": \"Error al obtener ID\", \"status\": " + 500 + "}";

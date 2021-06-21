@@ -43,7 +43,7 @@ public class EditarCalendario extends HttpServlet{
         // TODO Auto-generated method stub
         resp.setContentType("application/json");
 		PrintWriter out = resp.getWriter();
-		out.println(EditCalendarController.retornarIDCalendario());
+		out.println(EditCalendarController.retornarIDCalendario(req));
     }
     
 }

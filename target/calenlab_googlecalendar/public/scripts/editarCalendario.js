@@ -11,6 +11,9 @@ const mostrarIDCalendario = () => {
     }).then(data => {
         console.table(data);
 
+        let tituloNomUsuario = document.getElementById("nomUsuario");
+        tituloNomUsuario.innerText = data.nomUsuario;
+
         boton_editar.onclick = () => {
             let formulario = new FormData(formulario_editar);
             formulario.append("idCalendario", data.idCalendario);

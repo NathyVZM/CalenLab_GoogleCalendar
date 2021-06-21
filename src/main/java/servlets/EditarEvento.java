@@ -35,7 +35,7 @@ public class EditarEvento extends HttpServlet{
         // TODO Auto-generated method stub
         resp.setContentType("application/json");
 		PrintWriter out = resp.getWriter();
-		out.println(EditEventController.retornarIDEvento());
+		out.println(EditEventController.retornarIDEvento(req));
     }
 
     @Override
