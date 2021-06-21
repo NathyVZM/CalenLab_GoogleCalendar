@@ -7,9 +7,9 @@ const mostrarCalendarios = () => {
         return response.json();
     }).then(datos => {
         console.table(datos);
-        let nomUsuario =  document.getElementById("nomUsuario");
+        let nomUsuario = document.getElementById("nomUsuario");
         nomUsuario.innerHTML = datos.nomUsuario;
-        
+
         let div = document.getElementById("contenedor-calendarios");
 
         for (let i = 0; i < datos.idCalendario.length; i++) {
@@ -41,33 +41,44 @@ const mostrarCalendarios = () => {
                 }).then(lista => {
                     console.table(lista);
 
-                    //let contenedor_eventos = document.getElementById("eventos");
-                    //contenedor_eventos.innerHTML = "";
-
-                    for(let j = 0; j < lista.idEvento.length; j++){
+                    for (let j = 0; j < lista.idEvento.length; j++) {
                         console.log(lista.titulo[j]);
                         let fechaDate = new Date(`${lista.fecha[j]}T${lista.hora[j]}`);
 
                         let caja = document.getElementById(`hora-${fechaDate.getHours()}-dia-${fechaDate.getDate()}`);
-                        console.log(fechaDate.getHours());
+
+                        if (caja != null) {
+                            console.log(fechaDate.getHours());
+                            console.log(fechaDate.getDate());
+                            console.log(caja.id);
+
+                            let titulo = document.createElement("p");
+                            titulo.id = `titulo-${lista.idEvento[j]}`;
+                            titulo.innerText = lista.titulo[j];
+                            console.log(titulo.id);
+                            console.log(titulo.innerText);
+
+                            let imgEventoEditar = document.createElement("img");
+                            imgEventoEditar.width = "10";
+                            imgEventoEditar.src = "../assets/icons/editIcon.svg";
+
+                            let imgEventoBorrar = document.createElement("img");
+                            imgEventoBorrar.width = "10";
+                            imgEventoBorrar.src = "../assets/icons/deleteIcon.svg";
+
+                            caja.appendChild(titulo);
+                            caja.appendChild(imgEventoEditar);
+                            caja.appendChild(imgEventoBorrar);
+                        }
+                        /*console.log(fechaDate.getHours());
                         console.log(fechaDate.getDate());
                         console.log(caja.id);
-                        //let evento = document.createElement("div");
-                        //evento.name = "evento";
-                        //evento.id = lista.idEvento[j];
 
                         let titulo = document.createElement("p");
                         titulo.id = `titulo-${lista.idEvento[j]}`;
                         titulo.innerText = lista.titulo[j];
                         console.log(titulo.id);
                         console.log(titulo.innerText);
-
-                        //let tituloEvento = document.createElement("p");
-                        //tituloEvento.id = `tituloEvento-${lista.idEvento[j]}`;
-                        //tituloEvento.innerText = lista.titulo[j];
-
-                        //let imgEvento = document.createElement("img");
-                        //imgEvento.src = "../assets/icons/eventIcon.svg";
 
                         let imgEventoEditar = document.createElement("img");
                         imgEventoEditar.width = "10";
@@ -77,14 +88,9 @@ const mostrarCalendarios = () => {
                         imgEventoBorrar.width = "10";
                         imgEventoBorrar.src = "../assets/icons/deleteIcon.svg";
 
-                        //evento.appendChild(imgEvento);
-                        //evento.appendChild(tituloEvento);
-
                         caja.appendChild(titulo);
                         caja.appendChild(imgEventoEditar);
-                        caja.appendChild(imgEventoBorrar);
-
-                        //contenedor_eventos.appendChild(evento);
+                        caja.appendChild(imgEventoBorrar);*/
                     }
                 })
             };
