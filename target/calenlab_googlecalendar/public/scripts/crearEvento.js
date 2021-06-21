@@ -17,6 +17,10 @@ const crearEvento = () => {
     }).then(data => {
         console.table(data);
 
+        if(data.status == 200) {
+            window.location.href = "https://calenlab.herokuapp.com/public/views/principal.html";
+        }
+
         let fecha = new Date(`${data.fecha}T${data.hora}`);
         console.log(data.fecha);
         console.log(data.hora);

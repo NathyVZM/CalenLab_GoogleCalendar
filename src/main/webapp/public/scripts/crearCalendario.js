@@ -46,6 +46,10 @@ const crearCalendario = () => {
     }).then(datos => {
         console.table(datos);
 
+        if(datos.status == 200){
+            window.location.href = "https://calenlab.herokuapp.com/public/views/principal.html";
+        }
+
         let div = document.getElementById("contenedor-calendarios");
         let contenedor = document.createElement("div");
         let calendario = document.createElement("input");

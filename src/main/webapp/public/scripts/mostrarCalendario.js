@@ -59,12 +59,12 @@ const mostrarCalendarios = () => {
                             console.log(titulo.innerText);
 
                             let imgEventoEditar = document.createElement("img");
-                            imgEventoEditar.style.width = "8%";
+                            imgEventoEditar.style.width = "10px";
                             imgEventoEditar.style.float = "right";
                             imgEventoEditar.src = "../assets/icons/editIcon.svg";
 
                             let imgEventoBorrar = document.createElement("img");
-                            imgEventoBorrar.style.width = "8%";
+                            imgEventoBorrar.style.width = "10px";
                             imgEventoBorrar.style.float = "right";
                             imgEventoBorrar.src = "../assets/icons/deleteIcon.svg";
 
@@ -111,27 +111,6 @@ const mostrarCalendarios = () => {
                                 })
                             }
                         }
-                        /*console.log(fechaDate.getHours());
-                        console.log(fechaDate.getDate());
-                        console.log(caja.id);
-
-                        let titulo = document.createElement("p");
-                        titulo.id = `titulo-${lista.idEvento[j]}`;
-                        titulo.innerText = lista.titulo[j];
-                        console.log(titulo.id);
-                        console.log(titulo.innerText);
-
-                        let imgEventoEditar = document.createElement("img");
-                        imgEventoEditar.width = "10";
-                        imgEventoEditar.src = "../assets/icons/editIcon.svg";
-
-                        let imgEventoBorrar = document.createElement("img");
-                        imgEventoBorrar.width = "10";
-                        imgEventoBorrar.src = "../assets/icons/deleteIcon.svg";
-
-                        caja.appendChild(titulo);
-                        caja.appendChild(imgEventoEditar);
-                        caja.appendChild(imgEventoBorrar);*/
                     }
                 })
             };
