@@ -37,5 +37,13 @@ public class EditarEvento extends HttpServlet{
 		PrintWriter out = resp.getWriter();
 		out.println(EditEventController.retornarIDEvento());
     }
+
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // TODO Auto-generated method stub
+        resp.setContentType("application/json");
+		PrintWriter out = resp.getWriter();
+		out.println(EditEventController.editarEvento(req));
+    }
     
 }

@@ -14,7 +14,7 @@ const mostrarIDCalendario = () => {
         boton_editar.onclick = () => {
             let formulario = new FormData(formulario_editar);
             formulario.append("idCalendario", data.idCalendario);
-            for(let value of formulario.values()){
+            for (let value of formulario.values()) {
                 console.log(value);
             }
 
@@ -25,7 +25,7 @@ const mostrarIDCalendario = () => {
                 return response.json();
             }).then(repuesta => {
                 console.table(repuesta);
-                if(repuesta.status == 200){
+                if (repuesta.status == 200) {
                     window.location.href = "https://calenlab.herokuapp.com/public/views/principal.html";
                 }
             })

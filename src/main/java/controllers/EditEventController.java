@@ -6,6 +6,8 @@ import helpers.DB;
 import helpers.Evento;
 import helpers.PropertiesReader;
 
+import java.sql.*;
+
 public class EditEventController {
 
     private static PropertiesReader propsR = PropertiesReader.getInstances();
@@ -39,13 +41,22 @@ public class EditEventController {
         }
     }
 
-    //editarEvento()
-    public static String editarEvento(HttpServletRequest request){
+    // editarEvento()
+    public static String editarEvento(HttpServletRequest request) {
         try {
-            return "";
+            int idEvento = Integer.parseInt(request.getParameter("idEvento"));
+
+            Object[] evento = { idEvento, request.getParameter("titulo"), Date.valueOf(request.getParameter("fecha")),
+                    request.getParameter("descripcion"), null, Time.valueOf(request.getParameter("hora") + ":00"),
+                    idEvento };
+
+            db.dbUpdateQuery(propsR.getValue("updateEvents"), evento);
+
+            return "{\"message\": \"Evento Actualizado\", \"status\": " + 200 + ", \"titulo\": \""
+                    + request.getParameter("titulo") + "\", \"idEvento\": " + idEvento + "}";
         } catch (Exception e) {
-            //TODO: handle exception
-            return "";
+            // TODO: handle exception
+            return "{\"message\": \"Error al editar\", \"status\": " + 500 + "}";
         }
     }
 
