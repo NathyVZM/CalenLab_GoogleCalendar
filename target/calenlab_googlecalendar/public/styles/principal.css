@@ -279,7 +279,7 @@ main {
 #barraCentro {
     padding: 2%;
     height: 100%;
-    flex: 3;
+    flex: 3.5;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
@@ -353,9 +353,10 @@ main {
 
 #barraCentro table th img {
     float: right;
+    width: 5%;
 }
 
-#contenedor-eventos {
+/*#contenedor-eventos {
     flex: 1;
     display: flex;
     justify-content: space-around;
@@ -382,17 +383,11 @@ main {
     padding: 6%;
 }
 
-/*#eventos span {
-    background-color: aqua;
-    float: left;
-    margin-right: 5%;
-}*/
-
 #eventos img {
     float: left;
     width: 8%;
     margin-right: 5%;
-}
+}*/
 
 @font-face {
     font-family: "comfortaa";

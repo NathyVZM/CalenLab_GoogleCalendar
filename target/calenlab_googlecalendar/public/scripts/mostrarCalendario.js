@@ -59,11 +59,11 @@ const mostrarCalendarios = () => {
                             console.log(titulo.innerText);
 
                             let imgEventoEditar = document.createElement("img");
-                            imgEventoEditar.width = "10";
+                            //imgEventoEditar.width = "10";
                             imgEventoEditar.src = "../assets/icons/editIcon.svg";
 
                             let imgEventoBorrar = document.createElement("img");
-                            imgEventoBorrar.width = "10";
+                            //imgEventoBorrar.width = "10";
                             imgEventoBorrar.src = "../assets/icons/deleteIcon.svg";
 
                             caja.appendChild(titulo);

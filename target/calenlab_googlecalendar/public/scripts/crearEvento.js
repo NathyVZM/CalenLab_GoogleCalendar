@@ -25,28 +25,19 @@ const crearEvento = () => {
         
         let caja = document.getElementById(`hora-${fecha.getHours()}-dia-${fecha.getDate()}`);
 
-        //let div = document.getElementById("eventos");
-
-        /*let evento = document.createElement("div");
-        evento.name = "evento";
-        evento.id = data.idEvento;*/
-
         let titulo = document.createElement("p");
         titulo.id = `titulo-${data.idEvento}`;
         titulo.innerText = data.titulo;
 
-        /*let tituloEvento =  document.createElement("p");
-        tituloEvento.id = `tituloEvento-${data.idEvento}`;
-        tituloEvento.innerText = data.titulo;
+        let imgEventoEditar = document.createElement("img");
+        imgEventoEditar.src = "../assets/icons/editIcon.svg";
 
-        let imgEvento = document.createElement("img");
-        imgEvento.src = "../assets/icons/eventIcon.svg";
+        let imgEventoBorrar = document.createElement("img");
+        imgEventoBorrar.src = "../assets/icons/deleteIcon.svg";
 
-        evento.appendChild(imgEvento);
-        evento.appendChild(tituloEvento);*/
-
-        //div.appendChild(evento);
         caja.appendChild(titulo);
+        caja.appendChild(imgEventoEditar);
+        caja.appendChild(imgEventoBorrar);
     })
 }
 
