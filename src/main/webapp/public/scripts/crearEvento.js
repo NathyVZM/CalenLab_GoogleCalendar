@@ -26,7 +26,6 @@ const crearEvento = () => {
         let caja = document.getElementById(`hora-${fecha.getHours()}-dia-${fecha.getDate()}`);
 
         let titulo = document.createElement("p");
-        //titulo.id = `titulo-${data.idEvento}`;
         titulo.id = data.idEvento;
         titulo.innerText = data.titulo;
 
@@ -43,6 +42,27 @@ const crearEvento = () => {
         caja.appendChild(titulo);
         caja.appendChild(imgEventoEditar);
         caja.appendChild(imgEventoBorrar);
+
+        imgEventoBorrar.onclick = () => {
+            let formEvento = new FormData();
+            formEvento.append("idEvento", data.idEvento);
+
+            fetch("https://calenlab.herokuapp.com/EliminarEvento", {
+                method: "DELETE",
+                body: formEvento
+            }).then(response => {
+                return response.json();
+            }).then(respuesta => {
+                console.table(respuesta);
+
+                if(respuesta.status == 200){
+                    titulo.remove();
+                    imgEventoEditar.remove();
+                    imgEventoBorrar.remove();
+                    alert(respuesta.message);
+                }
+            })
+        }
     })
 }
 

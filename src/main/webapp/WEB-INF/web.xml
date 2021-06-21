@@ -82,4 +82,11 @@
     <servlet-class>servlets.EliminarEvento</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>EditarEvento</servlet-name>
+    <display-name>EditarEvento</display-name>
+    <description></description>
+    <servlet-class>servlets.EditarEvento</servlet-class>
+  </servlet>
+
 </web-app>

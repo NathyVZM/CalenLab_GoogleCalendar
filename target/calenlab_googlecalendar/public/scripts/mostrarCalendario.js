@@ -69,8 +69,8 @@ const mostrarCalendarios = () => {
                             imgEventoBorrar.src = "../assets/icons/deleteIcon.svg";
 
                             caja.appendChild(titulo);
-                            caja.appendChild(imgEventoBorrar);
                             caja.appendChild(imgEventoEditar);
+                            caja.appendChild(imgEventoBorrar);
 
                             imgEventoBorrar.onclick = () => {
                                 let formEvento = new FormData();
@@ -85,15 +85,29 @@ const mostrarCalendarios = () => {
                                     console.table(respuesta);
 
                                     if(respuesta.status == 200){
-                                        alert(respuesta.message);
                                         titulo.remove();
                                         imgEventoEditar.remove();
                                         imgEventoBorrar.remove();
+                                        alert(respuesta.message);
                                     }
+                                })
+                            }
 
-                                    /*titulo.remove();
-                                    imgEventoEditar.remove();
-                                    imgEventoBorrar.remove();*/
+                            imgEventoEditar.onclick = () => {
+                                let formIdEvento = new FormData();
+                                formIdEvento.append("idEvento", lista.idEvento[j]);
+
+                                fetch("https://calenlab.herokuapp.com/EditarEvento",  {
+                                    method: "POST",
+                                    body: formIdEvento
+                                }).then(response => {
+                                    return response.json();
+                                }).then (datoIdEvento => {
+                                    console.table(datoIdEvento);
+
+                                    if(datoIdEvento.status == 200){
+                                        window.location.href = "https://calenlab.herokuapp.com/public/views/editarEvento.html"
+                                    }
                                 })
                             }
                         }

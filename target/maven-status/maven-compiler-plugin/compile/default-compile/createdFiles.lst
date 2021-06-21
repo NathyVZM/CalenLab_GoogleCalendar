@@ -3,6 +3,7 @@ servlets\Calendarios.class
 helpers\Auth.class
 servlets\CrearCalendario.class
 servlets\LoginUsuario.class
+helpers\Evento.class
 servlets\CrearEvento.class
 controllers\CreateEventController.class
 controllers\LoginController.class
@@ -11,11 +12,13 @@ servlets\EliminarCalendario.class
 controllers\EditCalendarController.class
 servlets\RegistroUsuario.class
 helpers\Hashing.class
+servlets\EditarEvento.class
 controllers\EditUserController.class
 servlets\EditarUsuario.class
 controllers\ShowCalendarController.class
 servlets\EliminarUsuario.class
 helpers\Calendario.class
+controllers\EditEventController.class
 controllers\CreateCalendarController.class
 helpers\DB.class
 servlets\EliminarEvento.class

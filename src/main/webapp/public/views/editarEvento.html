@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalenLab - Editar Evento</title>
+    <link rel="icon" href="../assets/icons/calenlabTitleLogo.svg" type="image/svg+xml" sizes="16x16">
+    <link rel="stylesheet" href="../styles/editar.css">
+</head>
+<body>
+    <header>
+        <div>
+            <a href="../views/principal.html"><img src="../assets/icons/arrowLeftWhite.svg" alt="">Editar Evento</a>
+        </div>
+        <div>
+            <img src="../assets/icons/userIcon.svg" alt="">
+            <h2 id="nomUsuario">Nombre de Usuario</h2>
+        </div>
+    </header>
+    <main>
+        <form action="" id="formulario-editar">
+            <label for="titulo">
+                <img src="../assets/icons/editPencil.svg" alt="">
+                Titulo del Evento
+            </label>
+            <input type="text" placeholder="Titulo del Evento" name="titulo">
+
+            <label for="fecha">
+                <img src="../assets/icons/addDate2.svg" alt="">
+                Fecha
+            </label>
+            <input type="date" placeholder="Fecha del Evento" name="fecha">
+
+            <label for="hora">
+                <img src="../assets/icons/addHour.svg" alt="">
+                Hora
+            </label>
+            <input type="time" placeholder="Hora del Evento" name="hora">
+
+            <label for="descripcion">
+                <img src="../assets/icons/textIcon.svg" alt="">
+                Descripcion
+            </label>
+            <textarea name="descripcion" cols="100" rows="10" placeholder="Descripcion del Evento..."></textarea>
+    
+            <button id="boton-editar" type="button" class="boton">Editar Evento</button>
+        </form>
+    </main>
+
+    <script src="../scripts/editarEvento.js"></script>
+</body>
+</html>
