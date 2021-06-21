@@ -55,16 +55,17 @@ const mostrarCalendarios = () => {
                             let titulo = document.createElement("p");
                             titulo.id = lista.idEvento[j];
                             titulo.innerText = lista.titulo[j];
+                            titulo.style.backgroundColor = lista.color[i];
                             console.log(titulo.id);
                             console.log(titulo.innerText);
 
                             let imgEventoEditar = document.createElement("img");
-                            imgEventoEditar.style.width = "20px";
+                            imgEventoEditar.style.width = "15px";
                             imgEventoEditar.style.float = "right";
                             imgEventoEditar.src = "../assets/icons/editIcon.svg";
 
                             let imgEventoBorrar = document.createElement("img");
-                            imgEventoBorrar.style.width = "20px";
+                            imgEventoBorrar.style.width = " 15px";
                             imgEventoBorrar.style.float = "right";
                             imgEventoBorrar.src = "../assets/icons/deleteIcon.svg";
 
@@ -145,6 +146,7 @@ const mostrarCalendarios = () => {
                     label.remove();
                     calendario.remove();
                     document.getElementById(`opcion${datos.idCalendario[i]}`).remove();
+                    alert(data.message);
                 })
 
             })

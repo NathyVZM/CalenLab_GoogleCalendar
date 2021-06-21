@@ -19,6 +19,7 @@ public class ShowCalendarController {
             String nomUsuario = (String) session.getAttribute("usuario");
             Object[] idcalendarios = db.dbSelectCalendar(propsR.getValue("selectIDCalendars"), nomUsuario);
             Object[] titulos = db.dbSelectCalendar(propsR.getValue("selectTitleCalendars"), nomUsuario);
+            Object[] colores = db.dbSelectCalendar(propsR.getValue("selectColorCalendars"), nomUsuario);
             
             StringBuilder retorno = new StringBuilder();
             retorno.append("{\"message\": \"Calendarios obtenidos\", \"status\":" + 200 + ", \"nomUsuario\": \"" + nomUsuario + "\", \"idCalendario\": [");
@@ -30,6 +31,12 @@ public class ShowCalendarController {
 
             for(int i = 0; i < titulos.length; i++){
                 retorno.append("\"" + titulos[i].toString() + "\",");
+            }
+            retorno = retorno.deleteCharAt(retorno.length() - 1);
+            retorno.append("], \"color\": [");
+
+            for(int i = 0; i < colores.length; i++){
+                retorno.append("\"" + colores[i].toString() + "\",");
             }
             retorno = retorno.deleteCharAt(retorno.length() - 1);
             retorno.append("]}");
