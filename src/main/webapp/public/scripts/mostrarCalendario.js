@@ -55,7 +55,7 @@ const mostrarCalendarios = () => {
                             let titulo = document.createElement("p");
                             titulo.id = lista.idEvento[j];
                             titulo.innerText = lista.titulo[j];
-                            titulo.style.backgroundColor = lista.color[i];
+                            titulo.style.backgroundColor = datos.color[i];
                             console.log(titulo.id);
                             console.log(titulo.innerText);
 
