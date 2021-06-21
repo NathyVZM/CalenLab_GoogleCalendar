@@ -124,7 +124,7 @@ function cambiarNum() {
 function cambiarNumAtras() {
     //let date;
     for (let i = 0; i < 24; i++) {
-        date = diaActual.getDate() - 1;
+        let date = diaActual.getDate() - 1;
         let fila = document.getElementById(`hora-${i}`);
         let datos = fila.getElementsByTagName("td");
         for (let j = 7; j > 0; j--) {

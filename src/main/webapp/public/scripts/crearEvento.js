@@ -26,7 +26,8 @@ const crearEvento = () => {
         let caja = document.getElementById(`hora-${fecha.getHours()}-dia-${fecha.getDate()}`);
 
         let titulo = document.createElement("p");
-        titulo.id = `titulo-${data.idEvento}`;
+        //titulo.id = `titulo-${data.idEvento}`;
+        titulo.id = data.idEvento;
         titulo.innerText = data.titulo;
 
         let imgEventoEditar = document.createElement("img");

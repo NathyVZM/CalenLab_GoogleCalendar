@@ -53,7 +53,8 @@ const mostrarCalendarios = () => {
                             console.log(caja.id);
 
                             let titulo = document.createElement("p");
-                            titulo.id = `titulo-${lista.idEvento[j]}`;
+                            //titulo.id = `titulo-${lista.idEvento[j]}`;
+                            titulo.id = lista.idEvento[j];
                             titulo.innerText = lista.titulo[j];
                             console.log(titulo.id);
                             console.log(titulo.innerText);
