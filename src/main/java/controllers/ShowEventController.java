@@ -73,6 +73,7 @@ public class ShowEventController {
             return retorno.toString();
         } catch (Exception e) {
             // TODO: handle exception
+            e.printStackTrace();
             return "{\"message\": \"Error al obtener eventos\", \"status\": " + 500 + "}";
         }
     }

@@ -47,7 +47,7 @@ public class EditEventController {
             int idEvento = Integer.parseInt(request.getParameter("idEvento"));
 
             Object[] evento = { idEvento, request.getParameter("titulo"), Date.valueOf(request.getParameter("fecha")),
-                    request.getParameter("descripcion"), null, Time.valueOf(request.getParameter("hora") + ":00"),
+                    request.getParameter("descripcion"), "null", Time.valueOf(request.getParameter("hora") + ":00"),
                     idEvento };
 
             db.dbUpdateQuery(propsR.getValue("updateEvents"), evento);
