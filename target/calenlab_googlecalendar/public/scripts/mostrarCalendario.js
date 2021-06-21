@@ -53,7 +53,6 @@ const mostrarCalendarios = () => {
                             console.log(caja.id);
 
                             let titulo = document.createElement("p");
-                            //titulo.id = `titulo-${lista.idEvento[j]}`;
                             titulo.id = lista.idEvento[j];
                             titulo.innerText = lista.titulo[j];
                             console.log(titulo.id);
@@ -70,8 +69,8 @@ const mostrarCalendarios = () => {
                             imgEventoBorrar.src = "../assets/icons/deleteIcon.svg";
 
                             caja.appendChild(titulo);
-                            caja.appendChild(imgEventoEditar);
                             caja.appendChild(imgEventoBorrar);
+                            caja.appendChild(imgEventoEditar);
 
                             imgEventoBorrar.onclick = () => {
                                 let formEvento = new FormData();
@@ -85,9 +84,16 @@ const mostrarCalendarios = () => {
                                 }).then(respuesta => {
                                     console.table(respuesta);
 
-                                    titulo.remove();
+                                    if(respuesta.status == 200){
+                                        alert(respuesta.message);
+                                        titulo.remove();
+                                        imgEventoEditar.remove();
+                                        imgEventoBorrar.remove();
+                                    }
+
+                                    /*titulo.remove();
                                     imgEventoEditar.remove();
-                                    imgEventoBorrar.remove();
+                                    imgEventoBorrar.remove();*/
                                 })
                             }
                         }
