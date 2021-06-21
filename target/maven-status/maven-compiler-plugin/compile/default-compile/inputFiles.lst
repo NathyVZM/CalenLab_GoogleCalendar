@@ -4,6 +4,7 @@ C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecale
 C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\controllers\EditCalendarController.java
 C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\controllers\ShowEventController.java
 C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\servlets\EditarCalendario.java
+C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\servlets\EliminarEvento.java
 C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\controllers\LoginController.java
 C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\servlets\EliminarCalendario.java
 C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\controllers\RegisterController.java
@@ -14,6 +15,7 @@ C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecale
 C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\controllers\CreateEventController.java
 C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\controllers\CreateCalendarController.java
 C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\servlets\CrearEvento.java
+C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\controllers\DeleteEventController.java
 C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\helpers\Hashing.java
 C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\controllers\EditUserController.java
 C:\Users\natha\Documents\Nathalie Zambrano\Desarrollo Web II\calenlab_googlecalendar\src\main\java\controllers\ShowCalendarController.java

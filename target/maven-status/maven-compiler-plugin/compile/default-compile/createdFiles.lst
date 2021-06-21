@@ -18,8 +18,10 @@ servlets\EliminarUsuario.class
 helpers\Calendario.class
 controllers\CreateCalendarController.class
 helpers\DB.class
+servlets\EliminarEvento.class
 helpers\PropertiesReader.class
 controllers\ShowEventController.class
+controllers\DeleteEventController.class
 controllers\DeleteUserController.class
 helpers\Prueba_Main.class
 controllers\DeleteCalendarController.class

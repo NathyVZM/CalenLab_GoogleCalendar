@@ -72,6 +72,24 @@ const mostrarCalendarios = () => {
                             caja.appendChild(titulo);
                             caja.appendChild(imgEventoEditar);
                             caja.appendChild(imgEventoBorrar);
+
+                            imgEventoBorrar.onclick = () => {
+                                let formEvento = new FormData();
+                                formEvento.append("idEvento", lista.idEvento[j]);
+
+                                fetch("https://calenlab.herokuapp.com/EliminarEvento", {
+                                    method: "DELETE",
+                                    body: formEvento
+                                }).then(response => {
+                                    return response.json();
+                                }).then(respuesta => {
+                                    console.table(respuesta);
+
+                                    titulo.remove();
+                                    imgEventoEditar.remove();
+                                    imgEventoBorrar.remove();
+                                })
+                            }
                         }
                         /*console.log(fechaDate.getHours());
                         console.log(fechaDate.getDate());

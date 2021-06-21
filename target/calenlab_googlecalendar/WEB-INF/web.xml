@@ -75,4 +75,11 @@
     <servlet-class>servlets.Eventos</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>EliminarEvento</servlet-name>
+    <display-name>EliminarEvento</display-name>
+    <description></description>
+    <servlet-class>servlets.EliminarEvento</servlet-class>
+  </servlet>
+
 </web-app>
