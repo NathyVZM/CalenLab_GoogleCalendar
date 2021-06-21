@@ -50,7 +50,7 @@ const crearCalendario = () => {
             window.location.href = "https://calenlab.herokuapp.com/public/views/principal.html";
         }
 
-        let div = document.getElementById("contenedor-calendarios");
+        /*let div = document.getElementById("contenedor-calendarios");
         let contenedor = document.createElement("div");
         let calendario = document.createElement("input");
         let label = document.createElement("label");
@@ -174,7 +174,7 @@ const crearCalendario = () => {
         opcion.innerText = datos.titulo;
         opcion.id = datos.idCalendario;
 
-        select.appendChild(opcion);
+        select.appendChild(opcion);*/
     })
 }
 
