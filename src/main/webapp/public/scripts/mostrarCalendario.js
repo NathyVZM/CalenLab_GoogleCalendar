@@ -26,7 +26,7 @@ const mostrarCalendarios = () => {
             calendario.name = "calendario";
             calendario.id = datos.idCalendario[i];
             calendario.value = datos.idCalendario[i];
-            calendario.onchange = (e) => {
+            calendario.onclick = (e) => {
                 let form = new FormData()
                 form.append("idCalendario", e.target.id);
                 for (let value of form.values()) {
@@ -49,6 +49,8 @@ const mostrarCalendarios = () => {
                         let fechaDate = new Date(`${lista.fecha[j]}T${lista.hora[j]}`);
 
                         let caja = document.getElementById(`hora-${fechaDate.getHours()}-dia-${fechaDate.getDate()}`);
+                        console.log(fechaDate.getHours());
+                        console.log(fechaDate.getDate());
                         console.log(caja.id);
                         //let evento = document.createElement("div");
                         //evento.name = "evento";
