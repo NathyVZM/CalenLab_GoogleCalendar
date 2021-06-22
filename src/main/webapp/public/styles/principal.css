@@ -158,7 +158,8 @@ main {
 }
 
 #contenedor-calendarios label {
-    margin-left: 2%;
+    margin-left: 3%;
+    margin-right: 2%;
 }
 
 #contenedor-calendarios img {
@@ -293,7 +294,7 @@ main {
 #barraCentro {
     padding: 2%;
     height: 100%;
-    flex: 3.5;
+    flex: 3;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;

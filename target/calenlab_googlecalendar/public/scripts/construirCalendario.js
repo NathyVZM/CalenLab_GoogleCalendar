@@ -29,7 +29,7 @@ function siguiente(e) {
         let filas = document.getElementById(`hora-${i}`);
         let datos = filas.getElementsByTagName("td");
 
-        for(let j = 3; j < 7; j++){
+        for(let j = 0; j < 7; j++){
             datos[j].innerHTML = "";
         }
     }
@@ -112,7 +112,6 @@ function cambiarNum() {
         let date = diaActual.getDate();
         let fila = document.getElementById(`hora-${i}`);
         let datos = fila.getElementsByTagName("td");
-        //let datos = document.querySelectorAll(`#hora-${i} td`);
         for (let j = 0; j < 7; j++) {
             datos[j].id = `hora-${i}-dia-${date}`;
             date++;
@@ -121,7 +120,6 @@ function cambiarNum() {
 }
 
 function cambiarNumAtras() {
-    //let date;
     for (let i = 0; i < 24; i++) {
         let date = diaActual.getDate() - 1;
         let fila = document.getElementById(`hora-${i}`);

@@ -33,17 +33,6 @@ const mostrarCalendarios = () => {
                     console.log(value);
                 }
 
-                /*let tr = document.querySelectorAll("tbody tr");
-
-                for(let j = 0; j < 24; j++){
-                    //let tr = document.getElementById(`hora-${i}`);
-                    let td = tr[i].getElementsByTagName("td");
-
-                    for(let x = 1; x < 8; x++){
-                        td[x].innerHTML = "";
-                    }
-                }*/
-
                 let td = document.getElementsByTagName("td");
 
                 for(let x = 0; x < td.length; x++){
@@ -77,14 +66,10 @@ const mostrarCalendarios = () => {
                             console.log(titulo.innerText);
 
                             let imgEventoEditar = document.createElement("img");
-                            //imgEventoEditar.style.width = "15px";
-                            //imgEventoEditar.style.float = "right";
                             imgEventoEditar.src = "../assets/icons/editIcon.svg";
                             imgEventoEditar.title = "Editar Evento";
 
                             let imgEventoBorrar = document.createElement("img");
-                            //imgEventoBorrar.style.width = " 15px";
-                            //imgEventoBorrar.style.float = "right";
                             imgEventoBorrar.src = "../assets/icons/deleteIcon.svg";
                             imgEventoBorrar.title = "Borrar Evento";
 
@@ -163,12 +148,16 @@ const mostrarCalendarios = () => {
                     return response.json();
                 }).then(data => {
                     console.table(data);
-                    editar.remove();
+                    /*editar.remove();
                     boton.remove();
                     label.remove();
                     calendario.remove();
                     document.getElementById(`opcion${datos.idCalendario[i]}`).remove();
-                    alert(data.message);
+                    alert(data.message);*/
+
+                    if(data.status == 200){
+                        window.location.href = "https://calenlab.herokuapp.com/public/views/editarEvento.html";
+                    }
                 })
 
             })

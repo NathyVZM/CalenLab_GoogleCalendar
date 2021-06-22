@@ -17,13 +17,16 @@ const enviarLogin = () => {
         return response.json();
     }).then(datos => {
         console.table(datos);
-        redireccionar(datos.status);
+        redireccionar(datos.status, datos.message);
     })
 }
 
-const redireccionar = (status) => {
+const redireccionar = (status, message) => {
     if(status == 200) {
         window.location.href = "https://calenlab.herokuapp.com/public/views/principal.html";
+    }
+    else {
+        alert(message);
     }
 }
 
