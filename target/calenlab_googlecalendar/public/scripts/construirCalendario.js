@@ -100,8 +100,6 @@ function llenarCalendario() {
                 td.innerHTML = "";
                 tr.appendChild(td);
             }
-            //tr.appendChild(th);
-            //tr.appendChild(td);
         }
         tbody.appendChild(tr);
     }

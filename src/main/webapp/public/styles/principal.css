@@ -371,39 +371,6 @@ main {
     width: 15px;
 }
 
-/*#contenedor-eventos {
-    flex: 1;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-flow: column wrap;
-    padding: 2%;
-    height: 100%;
-}
-
-#contenedor-eventos h2 {
-    color: #EB3B49;
-}
-
-#contenedor-eventos > div:first-child {
-    flex: 1;
-    padding: 2%;
-}
-
-#contenedor-eventos > div:last-child {
-    flex: 10;
-}
-
-#contenedor-eventos > div:last-child div{
-    padding: 6%;
-}
-
-#eventos img {
-    float: left;
-    width: 8%;
-    margin-right: 5%;
-}*/
-
 @font-face {
     font-family: "comfortaa";
     src: url("../assets/fonts/Comfortaa/Comfortaa-Bold.ttf");
