@@ -37,7 +37,7 @@ const mostrarCalendarios = () => {
                 //let tr = tbody.getElementsByTagName("tr");
 
                 for(let j = 0; j < 24; j++){
-                    let tr = tbody.getElementById(`hora-${i}`);
+                    let tr = document.getElementById(`hora-${i}`);
                     let td = tr.getElementsByTagName("td");
 
                     for(let x = 1; x < 8; x++){
