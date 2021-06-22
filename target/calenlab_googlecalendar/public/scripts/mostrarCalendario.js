@@ -156,7 +156,7 @@ const mostrarCalendarios = () => {
                     alert(data.message);*/
 
                     if(data.status == 200){
-                        window.location.href = "https://calenlab.herokuapp.com/public/views/editarEvento.html";
+                        window.location.href = "https://calenlab.herokuapp.com/public/views/principal.html";
                     }
                 })
 
