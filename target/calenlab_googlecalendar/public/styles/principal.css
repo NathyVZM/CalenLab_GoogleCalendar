@@ -35,6 +35,11 @@ header h2 {
 
 header img {
     width: 7%;
+    transition: background-color 0.2s ease-in-out 0s;
+}
+
+header img:hover {
+    background-color: #d1313f;
 }
 
 header div:first-child {
@@ -152,9 +157,18 @@ main {
     color: #EB3B49;
 }
 
+#contenedor-calendarios label {
+    margin-left: 2%;
+}
+
 #contenedor-calendarios img {
     width: 9%;
     cursor: pointer;
+    transition: background-color 0.2s ease-in-out 0s;
+}
+
+#contenedor-calendarios img:hover {
+    background-color: #ffeeef;
 }
 
 #cajaFormularioCalendario, #cajaFormularioEvento{
@@ -321,7 +335,7 @@ main {
 }
 
 #barraCentro img:hover {
-    background-color: lightgray;
+    background-color: #ffeeef;
 }
 
 #barraCentro div:last-child div {
@@ -351,7 +365,7 @@ main {
     padding: 2.5%;
 }
 
-#barraCentro table th img {
+#barraCentro table td img {
     float: right;
     width: 5%;
 }

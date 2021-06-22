@@ -55,19 +55,21 @@ const mostrarCalendarios = () => {
                             let titulo = document.createElement("p");
                             titulo.id = lista.idEvento[j];
                             titulo.innerText = lista.titulo[j];
-                            titulo.style.backgroundColor = datos.color[i];
+                            titulo.style.color = datos.color[i];
                             console.log(titulo.id);
                             console.log(titulo.innerText);
 
                             let imgEventoEditar = document.createElement("img");
-                            imgEventoEditar.style.width = "15px";
+                            //imgEventoEditar.style.width = "15px";
                             imgEventoEditar.style.float = "right";
                             imgEventoEditar.src = "../assets/icons/editIcon.svg";
+                            imgEventoEditar.title = "Editar Evento";
 
                             let imgEventoBorrar = document.createElement("img");
-                            imgEventoBorrar.style.width = " 15px";
+                            //imgEventoBorrar.style.width = " 15px";
                             imgEventoBorrar.style.float = "right";
                             imgEventoBorrar.src = "../assets/icons/deleteIcon.svg";
+                            imgEventoBorrar.title = "Borrar Evento";
 
                             caja.appendChild(titulo);
                             caja.appendChild(imgEventoEditar);
@@ -120,7 +122,9 @@ const mostrarCalendarios = () => {
             label.htmlFor = datos.idCalendario[i];
 
             imgBorrar.src = "../assets/icons/deleteIcon.svg";
+            imgBorrar.title = "Borrar Calendario";
             imgEditar.src = "../assets/icons/editIcon.svg";
+            imgEditar.title = "Editar Calendario";
 
             boton.appendChild(imgBorrar);
             boton.id = `eliminar-${datos.idCalendario[i]}`;

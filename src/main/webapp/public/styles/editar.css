@@ -103,6 +103,7 @@ form textarea {
     margin: 2% 3% 7% 3%;
     border: 1px solid #EB3B49;
     outline: none;
+    font-family: montserrat_alternates;
 }
 
 form input[type="color"]{
