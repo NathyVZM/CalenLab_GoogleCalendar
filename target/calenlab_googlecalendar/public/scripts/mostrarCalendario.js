@@ -33,8 +33,7 @@ const mostrarCalendarios = () => {
                     console.log(value);
                 }
 
-                //let tbody = document.getElementsByTagName("tbody")[0];
-                let tr = document.querySelectorAll("tbody tr");
+                /*let tr = document.querySelectorAll("tbody tr");
 
                 for(let j = 0; j < 24; j++){
                     //let tr = document.getElementById(`hora-${i}`);
@@ -43,13 +42,13 @@ const mostrarCalendarios = () => {
                     for(let x = 1; x < 8; x++){
                         td[x].innerHTML = "";
                     }
-                }
-
-                /*for(let i = 0; i < td.length; i++){
-                    if(td[i].innerHTML != i){
-                        td[i].innerHTML = "";
-                    }                
                 }*/
+
+                let td = document.getElementsByTagName("td");
+
+                for(let x = 0; x < td.length; x++){
+                    td[x].innerHTML = "";              
+                }
 
                 fetch("https://calenlab.herokuapp.com/Eventos", {
                     method: "POST",

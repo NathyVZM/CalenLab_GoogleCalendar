@@ -29,7 +29,7 @@ function siguiente(e) {
         let filas = document.getElementById(`hora-${i}`);
         let datos = filas.getElementsByTagName("td");
 
-        for(let j = 1; j < 8; j++){
+        for(let j = 3; j < 7; j++){
             datos[j].innerHTML = "";
         }
     }
@@ -45,7 +45,7 @@ function anterior(e) {
         let filas = document.getElementById(`hora-${i}`);
         let datos = filas.getElementsByTagName("td");
 
-        for(let j = 1; j < 8; j++){
+        for(let j = 0; j < 7; j++){
             datos[j].innerHTML = "";
         }
     }
@@ -91,13 +91,17 @@ function llenarCalendario() {
         for (let j = 0; j < 8; j++) {
             let td = document.createElement("td");
             if (j == 0) {
-                td.innerHTML = i;
-                td.id = i;
+                let th = document.createElement("th");
+                th.innerHTML = i;
+                th.id = i;
+                tr.appendChild(th);
             }
             else {
                 td.innerHTML = "";
+                tr.appendChild(td);
             }
-            tr.appendChild(td);
+            //tr.appendChild(th);
+            //tr.appendChild(td);
         }
         tbody.appendChild(tr);
     }
@@ -108,7 +112,8 @@ function cambiarNum() {
         let date = diaActual.getDate();
         let fila = document.getElementById(`hora-${i}`);
         let datos = fila.getElementsByTagName("td");
-        for (let j = 1; j < 8; j++) {
+        //let datos = document.querySelectorAll(`#hora-${i} td`);
+        for (let j = 0; j < 7; j++) {
             datos[j].id = `hora-${i}-dia-${date}`;
             date++;
         }
@@ -121,7 +126,7 @@ function cambiarNumAtras() {
         let date = diaActual.getDate() - 1;
         let fila = document.getElementById(`hora-${i}`);
         let datos = fila.getElementsByTagName("td");
-        for (let j = 7; j > 0; j--) {
+        for (let j = 6; j >= 0; j--) {
             datos[j].id = `hora-${i}-dia-${date}`;
             if (date <= 0) {
                 date = diaActual.getDate();
