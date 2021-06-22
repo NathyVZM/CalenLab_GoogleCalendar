@@ -33,6 +33,12 @@ const mostrarCalendarios = () => {
                     console.log(value);
                 }
 
+                let td = document.getElementsByTagName("td");
+
+                for(let i = 0; i < td.length; i++){
+                    td[i].innerHTML = "";
+                }
+
                 fetch("https://calenlab.herokuapp.com/Eventos", {
                     method: "POST",
                     body: form
@@ -120,6 +126,7 @@ const mostrarCalendarios = () => {
 
             label.innerText = datos.titulo[i];
             label.htmlFor = datos.idCalendario[i];
+            label.style.color = datos.color[i];
 
             imgBorrar.src = "../assets/icons/deleteIcon.svg";
             imgBorrar.title = "Borrar Calendario";
