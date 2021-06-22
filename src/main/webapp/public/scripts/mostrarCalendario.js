@@ -33,12 +33,12 @@ const mostrarCalendarios = () => {
                     console.log(value);
                 }
 
-                let tbody = document.getElementsByTagName("tbody")[0];
-                //let tr = tbody.getElementsByTagName("tr");
+                //let tbody = document.getElementsByTagName("tbody")[0];
+                let tr = document.querySelectorAll("tbody tr");
 
                 for(let j = 0; j < 24; j++){
-                    let tr = document.getElementById(`hora-${i}`);
-                    let td = tr.getElementsByTagName("td");
+                    //let tr = document.getElementById(`hora-${i}`);
+                    let td = tr[i].getElementsByTagName("td");
 
                     for(let x = 1; x < 8; x++){
                         td[x].innerHTML = "";
