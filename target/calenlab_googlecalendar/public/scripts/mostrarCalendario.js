@@ -33,11 +33,23 @@ const mostrarCalendarios = () => {
                     console.log(value);
                 }
 
-                let td = document.getElementsByTagName("td");
+                let tbody = document.getElementsByTagName("tbody")[0];
+                //let tr = tbody.getElementsByTagName("tr");
 
-                for(let i = 0; i < td.length; i++){
-                    td[i].innerHTML = "";
+                for(let j = 0; j < 24; j++){
+                    let tr = tbody.getElementById(`hora-${i}`);
+                    let td = tr.getElementsByTagName("td");
+
+                    for(let x = 1; x < 8; x++){
+                        td[x].innerHTML = "";
+                    }
                 }
+
+                /*for(let i = 0; i < td.length; i++){
+                    if(td[i].innerHTML != i){
+                        td[i].innerHTML = "";
+                    }                
+                }*/
 
                 fetch("https://calenlab.herokuapp.com/Eventos", {
                     method: "POST",
@@ -67,13 +79,13 @@ const mostrarCalendarios = () => {
 
                             let imgEventoEditar = document.createElement("img");
                             //imgEventoEditar.style.width = "15px";
-                            imgEventoEditar.style.float = "right";
+                            //imgEventoEditar.style.float = "right";
                             imgEventoEditar.src = "../assets/icons/editIcon.svg";
                             imgEventoEditar.title = "Editar Evento";
 
                             let imgEventoBorrar = document.createElement("img");
                             //imgEventoBorrar.style.width = " 15px";
-                            imgEventoBorrar.style.float = "right";
+                            //imgEventoBorrar.style.float = "right";
                             imgEventoBorrar.src = "../assets/icons/deleteIcon.svg";
                             imgEventoBorrar.title = "Borrar Evento";
 

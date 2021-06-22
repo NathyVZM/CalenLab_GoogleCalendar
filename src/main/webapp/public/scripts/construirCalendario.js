@@ -1,8 +1,4 @@
 let diaActual = new Date();
-//let mesActual = diaActual.getMonth();
-//let anioActual = diaActual.getFullYear();
-//let fechaDiaActual = diaActual.getDate();
-//let diaSemana = diaActual.getDay();
 
 let dias = document.getElementById("dias");
 let contenido_dias = document.querySelectorAll("#dias th");
@@ -16,8 +12,6 @@ boton_anterior.onclick = anterior;
 
 let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre",
     "Octubre", "Noviembre", "Diciembre"];
-
-
 
 
 //LLAMANDO FUNCION
